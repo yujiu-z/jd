@@ -1,0 +1,43 @@
+
+<view class="space-block">
+    <navigator class="otherDoctor" target="miniProgram" open-type="navigate" app-id="wx74acef7b658d27ea" path="pages/login/login" version="trial">
+        <image src="{{ addIcon }}" />
+        <view class="text">
+            <text> 医名片医护端 </text>
+            <text class="text_first"> 做医护轻松一点。 </text>
+            <text class="text_second"> 包括医者名片、知识宣教内容制作，自主病患管理、自建医生协作群…… </text>
+        </view>
+
+        <button form-type="submit"> 用户须知 </button>
+    </navigator>
+    
+    <navigator class="otherDoctor" target="miniProgram" open-type="navigate" app-id="wx19402fc283d12642" path="pages/login/login" version="trial">
+        <image src="{{ togetherIcon }}" />
+        <view class="text">
+            <text> 医生协作 </text>
+            <text class="text_first"> 陕西省保健学会会员管理平台。 </text>
+            <text class="text_second"> 申请加入各专业委员会，与业内最权威的专家协作交流…… </text>
+        </view>
+        <button form-type="submit"> 用户须知 </button>
+    </navigator>
+
+    <navigator class="otherDoctor" target="miniProgram" open-type="navigate" app-id="wxb749c5b8e8473763" path="page/attention/attention" version="trial">
+        <image src="{{ cardIcon }}" />
+        <view class="text">
+            <text> 医名片 </text>
+            <text class="text_first"> 让健康容易一点。 </text>
+            <text class="text_second"> 可以关注了解医生、学习健康知识、接受健康指导、建立个人健康档案…… </text>
+        </view>
+        <button form-type="submit"> 用户须知 </button>
+    </navigator>
+
+    <navigator class="otherDoctor" target="miniProgram" open-type="navigate" app-id="wxa604bcacee01abd8" path="pages/index" version="trial">
+        <image src="{{ showIcon }}" />
+        <view class="text">
+            <text> 医图秀 </text>
+            <text class="text_first"> 中国医学视觉艺术平台。 </text>
+            <text class="text_second"> 大咖云集，在这里可以享受医学视觉艺术，匹配各种医美需求…… </text>
+        </view>
+        <button form-type="submit"> 用户须知 </button>
+    </navigator>
+  </view>

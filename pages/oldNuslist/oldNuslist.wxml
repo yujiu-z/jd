@@ -1,0 +1,41 @@
+<!--pages/oldNuslist/oldNuslist.wxml-->
+<view class="containers">
+  <text class="h2">老年人护理服务评定列表</text>
+  <view style="position: relative;"  wx:for="{{list}}" wx:key="index">
+     <view class="distance" wx:if="{{list.length != 0}}"  bindtouchstart="touchstart" bindtouchmove="touchmove"  data-va='{{index}}'>
+          <view class="list" bindtap="onclick" data-elderyid="{{item.Elderyid}}"> 
+              <view class="border">
+                  <text> 评估时间： {{ item.time }} </text>
+                  <image class="goIcon" src="{{ goOtherPage }}" wx:if="{{!item.telstatus}}"></image>
+                  <!-- //老年人日常生活活动能力评分表id -->
+                  <view class="Suffer" wx:if="{{item.Richangshenghuoid}}">活动</view>
+                  <view class="Suffers" wx:if="{{!item.Richangshenghuoid}}">活动</view>
+                  <!-- //精神状态与社会参与能力评分表id -->
+                  <view class="Suffer" wx:if="{{item.Jingshenzhuangtaiid}}">精神</view>
+                  <view class="Suffers" wx:if="{{!item.Jingshenzhuangtaiid}}">精神</view>
+                  <!-- //感知觉与沟通能力评分表id -->
+                  <view class="Suffer" wx:if="{{item.Ganzhijueid}}">沟通</view>
+                  <view class="Suffers" wx:if="{{!item.Ganzhijueid}}">沟通</view>
+                  <!-- //老年鰊合征罹患id -->
+                  <view class="Suffer" wx:if="{{item.Sufferid}}">综合</view> 
+                  <view class="Suffers" wx:if="{{!item.Sufferid}}">综合</view> 
+              </view>
+            </view>
+          </view>
+          <view class="errico"  wx:if="{{item.telstatus}}" bindtap="del"  data-elderyid="{{item.Elderyid}}">x</view>
+    </view>
+
+  <view class="nulldata" wx:if="{{list.length == 0}}">
+    暂无老年人护理服务表
+  </view>
+
+  <view class="tapicon" bindtap="addOldNus" >
+    <!-- //新增护理服务评定 -->
+    <image src="https://media.lotusdata.com/144579843844057610.png"></image>
+  </view>
+
+  <!-- <mp-dialog title="系统提示" show="{{showstatus}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>确定要删除该条记录</view>
+</mp-dialog> -->
+
+</view>

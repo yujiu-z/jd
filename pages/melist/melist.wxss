@@ -1,0 +1,177 @@
+/* pages/melist/melist.wxss */
+.redirectTo{
+  width: 100%;
+  height: auto;
+  /* position: relative; */
+  background-color: #f5f7f9;
+}
+/**index.wxss**/
+
+page {
+  height: 100%;
+}
+
+.userinfo {
+  position: relative;
+  background: #fff;
+  padding: 20rpx 40rpx;
+  overflow: hidden;
+  margin-top:0rpx;
+}
+
+.userinfo > .avatar {
+  float: left;
+  width: 140rpx;
+  height: 120rpx;
+  position: relative;
+}
+
+.userinfo > .avatar > .image {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.goOther {
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  right: 40rpx;
+  top: 78rpx;
+}
+
+.classname {
+  position: relative;
+  float: left;
+  width: 500rpx;
+  height: 120rpx;
+  margin-left: 20rpx;
+}
+
+.classname > text {
+  display: block;
+  position: absolute;
+  top: 10rpx;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.titlename {
+  font-size: 32rpx;
+  color: #999;
+}
+
+.space-line {
+  display: block;
+  height: 70rpx;
+  width: 100%;
+}
+
+.badge {
+  position: absolute;
+  top: 36rpx;
+  right: 80rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  background: #f00;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 25rpx;
+}
+
+.codetext, .protext, .metext {
+  margin-top: 20rpx;
+}
+
+.myname {
+  text-align: center;
+  display: flex;
+  height: 173rpx;
+  position: relative;
+}
+
+.btnarrow {
+  position: absolute;
+  top: 123rpx;
+  right: 38rpx;
+}
+
+.distance {
+  /* margin-bottom: -20rpx; */
+  margin-top:0rpx;
+}
+
+.list {
+  position: relative;
+  padding: 0 40rpx;
+  background: #fff;
+  width: 670rpx;
+  height: 100rpx;
+ 
+}
+
+.list > button {
+  position: absolute;
+  top: 0;
+  width: 670rpx;
+  height: 100rpx;
+  opacity: 0;
+}
+
+.border {
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.border > text {
+  float: left;
+  font-size: 36rpx;
+  color: #666;
+}
+
+.border > image.goIcon {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 40rpx;
+}
+
+.border > image.goIcons {
+  width: 50rpx;
+  height: 50rpx;
+  float: left;
+  margin-top: 28rpx;
+  margin-right: 20rpx;
+}
+
+.border > image.erweima {
+  position: absolute;
+  width: 80rpx !important;
+  height: 80rpx !important;
+  right: 30rpx;
+  top: 15rpx;
+}
+
+.authentication {
+  position: absolute;
+  top: 38rpx;
+  right: 80rpx;
+}
+
+.status {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 30rpx;
+  padding: 5rpx 20rpx;
+  background: #509d9f;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+  color: #fff;
+}

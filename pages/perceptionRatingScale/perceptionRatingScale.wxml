@@ -1,0 +1,59 @@
+<!--pages/perceptionRatingScale/perceptionRatingScale.wxml-->
+<view class="container">
+  <view class="number">{{number}}分</view>
+  <text class="h2">感知觉与沟通能力评分表</text>
+  <view class="rows">
+    <text>1、意识水平：</text>
+    <radio-group bindchange="gettiemlist" >
+            <label class="weui-cell weui-check__label" wx:for="{{tiemlist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>2、视力（若平日带老花镜或近视镜，应 在佩戴眼镜的情况下评估）</text>
+    <radio-group bindchange="getspaces" >
+            <label class="weui-cell weui-check__label" wx:for="{{spaces}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>3、听力（若平时佩戴助听器，应在佩戴助听器的情况下评估）：</text>
+    <radio-group bindchange="getwalklist" >
+            <label class="weui-cell weui-check__label" wx:for="{{walklist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>4、沟通交流（包括非语言沟通）</text>
+    <radio-group bindchange="getunwalklist" >
+            <label class="weui-cell weui-check__label" wx:for="{{unwalklist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+
+  <view class="rows" >
+    <view class="button-sp-area">
+      <button type="primary" plain="true" bindtap="save" style="width:100%;">保存</button>
+    </view>
+  </view>
+</view>

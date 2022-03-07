@@ -1,0 +1,36 @@
+<!--pages/personalService/personalService.wxml-->
+
+<!--pages/oldNuslist/oldNuslist.wxml-->
+<view class="containers">
+  <text class="h2">个人服务记录</text>
+  <text class="friendly" wx:if="{{ voteListPlan.length == 0 ? true : false }}"> 没有服务记录可以展示 </text>
+  <block wx:for="{{voteListPlan}}" wx:key  style="margin-top:-100rpx;">
+                        <view class="activityList {{item.isTouchMove ? 'activityListAct' : ''}}" bindtap="changeVoteListPlan" data-id="{{item.Detailsid}}" bindtouchstart="touchstart2" bindtouchmove="touchmove2" data-index="{{index}}" >
+                            <view class="body" >
+                                <text class="activityName" style="margin-top:10rpx;"> {{ item.Projectname }} </text>
+                                <text class="activityDate " style="line-height:100rpx;"> 更新时间：{{ item.Createtime }} </text>
+                            </view>
+                            <view class="operate">
+                                <view catchtap="changeVoteListPlan" data-id="{{item.Detailsid}}">编辑</view>
+                                <view catchtap="deleteVoteListPlan" data-id="{{item.Detailsid}}" data-index="{{index}}">删除</view>
+                            </view>
+                        </view>
+     </block>
+ 
+
+  <!-- <view class="nulldata" wx:if="{{list.length == 0}}">
+    暂无老年人护理服务表
+  </view> -->
+  <view class="addActivity" bindtap="newActivity" > 新建+ </view>
+  <view class="tapicon" bindtap="addOldNus" >
+    查看
+  </view>
+  <!-- <view class="send">
+        <button  bindtap="changeList"> 查看服务评定表 </button>
+    </view> -->
+  <!-- <mp-dialog title="系统提示" show="{{showstatus}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+        <view>确定要删除该条记录</view>
+</mp-dialog> -->
+
+</view>
+

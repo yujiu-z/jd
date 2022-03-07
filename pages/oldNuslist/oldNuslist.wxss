@@ -1,0 +1,136 @@
+/* pages/oldNuslist/oldNuslist.wxss */
+
+.containers {
+  width: 100%!important;
+  height: auto!important;
+  box-sizing: border-box;
+  padding: 10rpx;
+  position: relative;
+  color: #444;
+}
+
+.tapicon{
+  width: 50rpx;
+  height: 50rpx;
+  box-shadow: 0 0 15rpx rgba(80, 157, 159, 0.5);
+  border: 2rpx solid #f0762b;
+  background-color: #fff;
+  z-index: 1000;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 100rpx;
+  padding: 20rpx;
+  right: 50rpx;
+}
+
+.tapicon image{
+  width: 100%;
+  height: 100%;
+}
+
+
+.errico {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 28rpx;
+    line-height: 45rpx;
+    right: 10rpx;
+    text-align: center;
+    border-radius: 50%;
+    border: 1rpx solid red;
+    font-size: 30rpx;
+    color: red;
+}
+
+.h2{
+  font-size: 40rpx;
+  display: block;
+  width: 100%;
+  margin-top: 20rpx;
+  color: #444;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.distance {
+  margin-bottom: 10rpx;
+}
+
+.list {
+  position: relative;
+  padding: 0 40rpx;
+  background: #fff;
+}
+
+.list > button {
+  position: absolute;
+  top: 0;
+  width: 670rpx;
+  height: 100rpx;
+  opacity: 0;
+}
+
+.border {
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.border > text {
+  float: left;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.border > image.goIcon {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 40rpx;
+}
+
+.border> .Suffer{
+  width: 60rpx;
+  height: 40rpx;
+  font-size: 20rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  float: right;
+  background-color: #f0762b;
+  border-radius: 5rpx;
+  margin-top: 30rpx;
+  margin-right: 10rpx;
+}
+
+.border> .Suffers{
+  width: 60rpx;
+  height: 40rpx;
+  font-size: 20rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  float: right;
+  background-color: #888;
+  border-radius: 5rpx;
+  margin-top: 30rpx;
+  margin-right: 10rpx;
+}
+
+.border > image.erweima {
+  position: absolute;
+  width: 80rpx !important;
+  height: 80rpx !important;
+  right: 30rpx;
+  top: 15rpx;
+}
+
+.nulldata{
+  text-align: center;
+  color: #888;
+  font-size: 40rpx;
+  line-height: 300rpx;
+}
+

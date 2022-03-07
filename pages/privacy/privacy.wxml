@@ -1,0 +1,27 @@
+<!--pages/privacy/privacy.wxml-->
+
+<!--pages/privacy/privacy.wxml-->
+<view class="container">
+    <view class="content">
+        <view class="title">隐私政策</view>
+        <text>
+            
+					
+            生效日期：2022年2月22日
+            
+            引言
+           
+            您可通过以下方式与我们联系：
+            1. 如对本政策内容有任何疑问、意见或建议，您可通过 云照护 App 在线客服与我们联系；
+            2. 如果发现个人信息可能被泄露，您可以通过 云照护 App 在线投诉举报；
+            3. 电话：029-82657540
+
+
+
+
+
+
+
+        </text>
+    </view>
+</view>

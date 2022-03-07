@@ -1,0 +1,149 @@
+<!--pages/elderlyPatients/elderlyPatients.wxml-->
+<view class="container">
+  <text class="h2">老年综合征罹患情况</text>
+  <view class="rows">
+    <text>1、跌倒（30天内）：</text>
+    <radio-group bindchange="getNextstatuslist" >
+            <label class="weui-cell weui-check__label" wx:for="{{Nextstatuslist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>2、谵妄（30天内）：</text>
+    <radio-group bindchange="getDeliriumlist" >
+            <label class="weui-cell weui-check__label" wx:for="{{Deliriumlist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>3、慢性疼痛：</text>
+    <radio-group bindchange="getpainlist" >
+            <label class="weui-cell weui-check__label" wx:for="{{painlist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>4、老年帕金森综合征</text>
+    <radio-group bindchange="getParkinsonlist" >
+            <label class="weui-cell weui-check__label" wx:for="{{Parkinsonlist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>5、抑郁症：</text>
+    <radio-group bindchange="getdepressionlist" >
+            <label class="weui-cell weui-check__label" wx:for="{{depressionlist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>6、晕厥（30天内）：</text>
+    <radio-group bindchange="getsyncopelist" >
+            <label class="weui-cell weui-check__label" wx:for="{{syncopelist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>7、多重用药：</text>
+    <radio-group bindchange="getmultiplelist" >
+            <label class="weui-cell weui-check__label" wx:for="{{multiplelist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>8、痴呆：</text>
+    <radio-group bindchange="getdementialist" >
+            <label class="weui-cell weui-check__label" wx:for="{{dementialist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>9、失眠症</text>
+    <radio-group bindchange="getinsomnialist" >
+            <label class="weui-cell weui-check__label" wx:for="{{insomnialist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+
+  <view class="rows">
+    <text>10、尿失禁</text>
+    <radio-group bindchange="geturinarylist" >
+            <label class="weui-cell weui-check__label" wx:for="{{urinarylist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+
+  <view class="rows">
+    <text>11、压力性损伤</text>
+    <radio-group bindchange="getpressurelist" >
+            <label class="weui-cell weui-check__label" wx:for="{{pressurelist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+
+  <view class="rows">
+    <text>12、其他(请补充)：</text>
+    <view > <input type="text" class="other" placeholder="其他请补充说明" value="{{other}}" bindinput="getother"/></view>
+  </view>
+
+  <view class="rows" >
+    <view class="button-sp-area">
+      <button type="primary" plain="true" bindtap="save" style="width:100%;">保存</button>
+    </view>
+  </view>
+</view>

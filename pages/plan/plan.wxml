@@ -1,0 +1,101 @@
+
+<scroll-view scroll-y class="container">
+    <view class="listBorder" style="display:flex;position:relative;">
+        <text>居民档案 <text style="color: red;"> * </text></text>
+        <view style="text-align:right;margin-right:20%;">{{name}}</view>
+        <view class='rightrow' style="padding-right:40rpx;" style="float:right;">
+         <image src="{{ goOtherPage }}" style="width:40rpx;height:40rpx;float:right;margin-top:20rpx;margin-right:-30rpx;" mode="widthFix" bindtap="toResidents"  ></image>
+       </view>
+    </view>
+    <view class="listBorder" style="display:flex;position:relative;">
+        <text>服务包 <text style="color: red;"> * </text></text>
+        <view style="text-align:right;">{{ProjectNames}}</view>
+        <view class='rightrow' style="padding-right:40rpx;" style="float:right;">
+         <image src="{{ goOtherPage }}" style="width:40rpx;height:40rpx;float:right;margin-top:20rpx;margin-right:-30rpx;" mode="widthFix" bindtap="toProject"  ></image>
+       </view>
+    </view>
+    <view class="listBorder" wx:if="{{recordList.length> 0}}">
+        <text>服务项目详情<text style="color: red;"> * </text></text>
+        <picker bindchange="getList" range="{{recordList}}" value="{{index}}" range-key="ProjectName">
+            <view>{{recordList[index].ProjectName}}<text></text></view>
+            <!-- {{recordList[index].Name}} -->
+        </picker>
+    </view>
+    <view class="listBorder" style="display:flex;position:relative;">
+        <text> 履约时间 <text style="color: red;"> * </text></text>
+        <view class='rightrow' style="padding-right:40rpx;">
+          <picker mode="date" value="{{Evaluationtime}}" style="font-size:25rpx;width:100%;height:100%;color:#888;text-align:right;"   placeholder="履约日期" bindchange="getEvaluationtime">
+          {{Evaluationtime}}
+      </picker>
+      <text class="icon"></text>
+       </view>
+    </view>
+
+    <view class="listBorder">
+        <text> 服务图片<text style="color: red;"> * </text></text>
+        <!-- <view style="float:right;"> -->
+            <image class="showImg" wx:if="{{ uploadimgs == '' ? false : true }}" src="{{uploadimgs}}" mode="aspectFill" style="width:60rpx;height:60rpx;margin-left:5rpx;float:right;margin-top:10rpx;"></image>
+          <image class="addImg" src='{{ add }}' bindtap="chooseImages" wx:if="{{ uploadimgs == '' ? true : false }}"></image>
+        
+        <!-- </view> -->
+    </view>
+    <view class="listBorder">
+        <text>定位 <text style="color: red;"> * </text></text>
+        <!-- <text class='rightrow' style="padding-right:40rpx;float:right;">暂未开发</text> -->
+        <input disabled="{{inputDis}}" bindinput="getUnit" value="{{ cover.unit }}" placeholder="请输入定位" placeholder-class="color"></input>
+    </view>
+    <view class="listChoose" style="height: 60rpx;" >
+        <text style="float: left;"> 服务时间 </text>
+        <view style="float: right;">
+            否 <switch  checked="{{showTime == 1}}" bindchange="ChangeTime" color="#f0762b"></switch> 是
+        </view>
+    </view> 
+    <view class="listBorder" style="display:flex;position:relative;"  wx:if="{{showTime == 1}}">
+        <text> 开始时间 <text style="color: red;"> * </text></text>
+        <view class='rightrow' style="padding-right:40rpx;">
+          <picker mode="date" value="{{Starttime}}" style="font-size:25rpx;width:100%;height:100%;color:#888;text-align:right;"   placeholder="履约日期" bindchange="getStarttime">
+          {{Starttime}}
+      </picker>
+      <text class="icon"></text>
+       </view>
+    </view>
+    <view class="listBorder" style="display:flex;position:relative;" wx:if="{{showTime == 1}}">
+        <text> 结束时间 <text style="color: red;"> * </text></text>
+        <view class='rightrow' style="padding-right:40rpx;">
+          <picker mode="date" value="{{Endtime}}" style="font-size:25rpx;width:100%;height:100%;color:#888;text-align:right;"   placeholder="履约日期" bindchange="getEndtime">
+          {{Endtime}}
+      </picker>
+      <text class="icon"></text>
+       </view>
+    </view>
+    <view class="listBorder">
+        <text> 电子签名<text style="color: red;"> * </text></text>
+        <text class="mini-btn tapchange" type="primary" bindtap="toSig"  style="float:right;margin-right:10rpx;">去签字</text>
+    </view>
+    <view class="signature"  wx:if="{{signature!=''}}">
+        <image src="{{signature}}"></image>
+     </view>
+    <view class="listBorders">
+        <text>服务评价<text style="color: red;"> * </text></text>
+        <textarea  bindinput="getEvaluation" value="{{ evaluation}}" placeholder=" 请输入服务介绍" placeholder-class="color"></textarea>
+    </view>
+    <view class="listChoose" style="height: 60rpx;margin-bottom:100rpx;" wx:if="{{inputDis == true}}">
+        <text style="float: left;"> 服务状态 </text>
+        <view style="float: right;">
+            未确认 <switch  checked="{{showType == 1}}" bindchange="timeChange" color="#f0762b"></switch> 确认
+        </view>
+    </view>
+    <!-- <view class="listBorder" wx:if="{{inputDis == true}}" style="margin-bottom:100rpx;display:flex;"> -->
+        <!-- <text>服务状态<text style="color: red;"> * </text></text> -->
+       
+        <!-- <view>周 <switch color="#509d9f" bindchange="timeChange" checked="{{showType == 1}}"></switch> 月</view> -->
+        <!-- <picker bindchange="getStatus" range="{{serviceStatus}}" value="{{status}}">
+            <view>{{serviceStatus[status]}}<text></text></view>
+        </picker> -->
+    <!-- </view> -->
+</scroll-view>
+
+<view class="btn" bindtap="edit" wx:if="{{inputDis == true}}">{{'编辑'}}</view>
+<view class="btn" bindtap="save" wx:if="{{inputDis == false}}">保存</view>
+
+

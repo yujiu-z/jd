@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/logs/logs",
+    "pages/index/index",
+    "pages/news/news",
+    "pages/cooperation/cooperation",
+    "pages/servicetips/servicetips",
+    "pages/melist/melist",
+    "pages/createPatient/createPatient",
+    "pages/personalInformation/personalInformation",
+    "pages/oldNuslist/oldNuslist",
+    "pages/oldNus/oldNus",
+    "pages/qrCode/qrCode",
+    "pages/changePassword/changePassword",
+    "pages/plan/plan",
+    "pages/forgetPassword/forgetPassword",
+    "pages/register/register",
+    "pages/informationSheet/informationSheet",
+    "pages/geriatricAbility/geriatricAbility",
+    "pages/mentalAbility/mentalAbility",
+    "pages/perceptionRatingScale/perceptionRatingScale",
+    "pages/elderlyPatients/elderlyPatients",
+    "pages/signature/signature",
+    "pages/servicePlan/servicePlan",
+    "pages/servicePack/servicePack",
+    "pages/residentsArchives/residentsArchives",
+    "pages/projectList/projectList",
+    "pages/more/more",
+    "pages/agreement/agreement",
+    "pages/privacy/privacy",
+    "pages/personalService/personalService"
+  ],
+  "tabBar": {
+    "selectedColor": "#f0762b",
+    "color": "#333333",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+     
+      {
+        "pagePath": "pages/cooperation/cooperation",
+        "iconPath": "assets/img/社区居民档案.png",
+        "selectedIconPath": "assets/img/社区居民档案 (1).png",
+        "text": "档案管理"
+      },
+      {
+        "pagePath": "pages/servicetips/servicetips",
+        "iconPath": "assets/img/代办事项.png",
+        "selectedIconPath": "assets/img/代办事项 (1).png",
+        "text": "待办事项"
+      },
+      {
+        "pagePath": "pages/melist/melist",
+        "iconPath": "assets/img/个人中心.png",
+        "selectedIconPath": "assets/img/个人中心 (1).png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f0762b",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "plugins": {
+    "ocr-plugin": {
+      "version": "3.1.2",
+      "provider": "wx4418e3e031e551be"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

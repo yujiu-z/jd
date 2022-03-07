@@ -1,0 +1,485 @@
+/* pages/cooperation/cooperation.wxss */
+/* pages/patientGroup/patientGroup.wxss */
+
+/* @import "../disease/disease.wxss"; */
+page {
+    width: 100%!important;
+    height: 100%!important;
+}
+
+.container {
+    width: 100%!important;
+    height: auto!important;
+    padding-top: 120rpx;
+    box-sizing: border-box;
+    overflow:hidden;
+}
+
+.tapicon{
+    width: 50rpx;
+    height: 50rpx;
+    box-shadow: 0 0 15rpx rgba(80, 157, 159, 0.5);
+    border: 2rpx solid #f0762b;
+    background-color: #fff;
+    z-index: 1000;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 60rpx;
+    padding: 20rpx;
+    right: 50rpx;
+}
+
+
+.mechanismteam{
+    width: 100%;
+    height: 65rpx;
+    background-color: #eee;
+    margin-top: 3rpx;
+    box-sizing: border-box;
+    padding-left: 20rpx;
+    padding-top: 5rpx;
+}
+
+.changestatus{
+    width: 80%;
+    background-color: #fff;
+    padding: 28rpx;
+    /* padding-left: 40rpx; */
+    display: inline-block;
+    height: 100rpx;
+    vertical-align: top;
+    border-top: 2rpx solid #d7dde4;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+}
+
+.changestatuies{
+    width: 20%;
+    background-color: #fff;
+    font-size: 20rpx;
+    line-height: 50px;
+    font-size: 26rpx;
+    font-weight: 600;
+    padding-left: 40rpx;
+    display: inline-block;
+    height: 100rpx;
+    vertical-align: top;
+    border-top: 1px solid #d7dde4;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+}
+
+.changestatues{
+    width: 40%;
+    background-color: #fff;
+    padding: 20rpx;
+    padding-left: 10rpx;
+    display: inline-block;
+    height: 100rpx;
+    vertical-align: top;
+    border-top: 1px solid #d7dde4;
+    padding-bottom: 20rpx;
+    box-sizing: border-box;
+}
+
+.texts{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 10rpx;
+    border-style: solid;
+    border-color: #999 transparent transparent transparent;
+    position: absolute;
+    right: 20rpx;
+    top: 45%
+}
+
+.changetext{
+    text-align: right;
+}
+
+.buttonstatus{
+    background-color: transparent;
+    padding: 10rpx 20rpx;
+    color: #444;
+    border-radius: 4rpx;
+    border:1rpx solid #d7dde4;
+}
+
+.statustrue{
+    background-color: #f0762b;
+    margin-top:20rpx;
+    color: #fff;
+}
+
+.orgclass{
+    color: #444;
+    background-color: #f6f6f6;
+    font-size: 24rpx;
+    border-radius: 10rpx 0rpx 0rpx 10rpx;
+    padding:10rpx 30rpx;
+}
+
+.texttitle{
+    float: right;
+    margin-right: 20rpx;
+    font-size: 24rpx;
+    color: #444;
+    background-color: #faf9fe;
+    font-size: 24rpx;
+    position: relative;
+    margin-top: 5rpx;
+    border-radius: 10rpx ;
+    padding:5rpx 30rpx;
+    padding-right: 40rpx;
+}
+
+.texttitle .textlists{
+    position: absolute;
+    top: 40rpx;
+    left: 0rpx;
+    height: auto;
+    width: 100%;
+}
+
+.texttitle  .textlists .textlist{
+    background-color: #f6f6f6;
+    text-align: center;
+    padding: 10rpx;
+    height: 55rpx;
+    box-sizing: border-box;
+    color: #444;
+    border-top: 1rpx solid #eee;
+    overflow: hidden;
+    /* height: auto; */
+    width: 100%;
+}
+.texttitle .textlists .checkedT{
+    color: #afa3eb;
+    background-color: #faf9fe;
+}
+
+.texticon{
+    width: 20rpx;
+    height: 20rpx;
+    position: absolute;
+    right: 10rpx;
+    transform: rotate(90deg);
+    top: 10rpx;
+}
+
+.checkedT{
+    color: #afa3eb;
+    background-color: #faf9fe;
+}
+
+.teamclass{
+    color: #444;
+    padding:10rpx 30rpx;
+    border-radius: 10rpx;
+    background-color: #f6f6f6;
+    font-size: 24rpx;
+    margin-right: 13rpx;
+}
+
+.tapicones{
+    width: 50rpx;
+    height: 50rpx;
+    box-shadow: 0 0 15rpx rgba(80, 157, 159, 0.5);
+    border: 2rpx solid #509d9f;
+    background-color: #fff;
+    z-index: 1000;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 200rpx;
+    padding: 20rpx;
+    right: 50rpx;
+}
+
+.tapiconenumber{
+    width: 110rpx;
+    height: 70rpx;
+    box-shadow: 0 0 15rpx rgba(80, 157, 159, 0.5);
+    border: 2rpx solid #509d9f;
+    background-color: #fff;
+    z-index: 1000;
+    text-align: center;
+    font-size: 18rpx;
+    line-height: 70rpx;
+    border-radius: 20rpx;
+    position: fixed;
+    top: 200rpx;
+    right: 50rpx;
+}
+
+.tapicones image{
+    width: 100%;
+    height: 100%;
+}
+
+.tapicon image{
+    width: 100%;
+    height: 100%;
+}
+
+.rowstyle{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20rpx;
+    text-align: left;
+}
+
+.picker{
+    position: absolute;
+    right: 10rpx;
+    top: 18rpx;
+    width: 100%;
+    text-align: right;
+}
+
+.appointment {
+    width: 730rpx!important;
+    padding-left: 40rpx!important;
+    margin-top:4rpx;
+    background:#fff;
+    height:180rpx;
+    /* border: 1rpx solid #eee; */
+}
+.appointment:nth-child(2n + 1), .appointment:nth-child(2n + 1) {
+    background-color: rgba(80, 156, 159, .1);
+}
+.searchBox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: 120rpx;
+    background: #fff;
+    padding: 0 40rpx;
+    box-sizing: border-box;
+}
+
+.searchBox > icon {
+    position: absolute;
+    left: 70rpx;
+    top: 45rpx;
+}
+
+.searchBox > input {
+    display: inline-block;
+    width: 440rpx;
+    height: 80rpx;
+    border-radius: 45rpx;
+    padding-left: 80rpx;
+    margin-top: 20rpx;
+    background: #eee;
+    border: 1rpx solid #eee;
+    font-size: 32rpx;
+    color: #666;
+}
+
+.searchBox > text {
+    float: right;
+    width: 120rpx;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 32rpx;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid #eee;
+}
+
+.createQuestion {
+    position: fixed;
+    right: 40rpx;
+    bottom: 140rpx;
+    width: 250rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+    background: #509d9f;
+    box-shadow: 0 0 15rpx rgba(80, 157, 159, 0.5);
+}
+
+.createQuestion > view:first-child {
+    float: left;
+    line-height: 80rpx;
+    font-size: 36rpx;
+    color: #fff;
+    margin-left: 20rpx;
+}
+
+.createQuestion > view:last-child {
+    position: relative;
+    float: right;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.icon > image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.tips {
+    width: 670rpx;
+    height: 280rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: 0; top: 0; right: 0; bottom: 0;
+    z-index: -1;
+    margin: auto;
+}
+
+.tips > image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.tips > text {
+    font-size: 32rpx;
+    color: #999;
+    line-height: 80rpx;
+    font-weight: bold;
+    text-align: center;
+}
+
+.idnum {
+    display: block;
+    font-size: 28rpx;
+    color: #999;
+    margin-top: 60rpx;
+}
+
+.shareBox {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentBox {
+    width: 610rpx;
+    padding: 50rpx 20rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 20rpx;
+    position: relative;
+}
+
+.contentBox > icon {
+    position: absolute;
+    right: 5rpx;
+    top: 5rpx;
+}
+
+.contentBox > text {
+    font-size: 34rpx;
+    color: #666;
+}
+
+.contentBox > button {
+    width: 100%;
+    background-color: #509d9f;
+    color: #fff;
+    font-size: 30rpx;
+    margin-top: 20rpx;
+}
+
+.filter-box{
+    width: 100%;
+    height: 65rpx;
+    position: relative;
+    background-color: #fff;
+}
+.filter-box > view {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    line-height: 65rpx;
+}
+.filter-box .by-age, .filter-box .by-range ,.filter-box .by-sex, .filter-box .all-num {
+    overflow:hidden;
+    box-sizing: border-box;
+    border-right: 1px solid #eee;
+    text-overflow : ellipsis;
+    white-space: nowrap;
+}
+
+.filter-box .age-options, .filter-box .sex-options, .filter-box .range-options {
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: height .2s ease-in-out;
+    position: absolute;
+    top: 65rpx;
+    border: 1px solid #eee;
+    vertical-align: top;
+    z-index: 10;
+    overflow: hidden;
+    height: 0;
+}
+
+.filter-box .age-options .option, .filter-box .sex-options .option, .filter-box .range-options .option {
+    height: 70rpx;
+    line-height: 70rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.filter-box .age-options {
+    left: 33%;
+}
+
+.filter-box .age-options :nth-child(2n) {
+    background-color: #509d9f;
+    color: #fff;
+} 
+.filter-box .sex-options :nth-child(2n) {
+    background-color: #509d9f;
+    color: #fff;
+} 
+.filter-box .range-options :nth-child(2n) {
+    background-color: #509d9f;
+    color: #fff;
+} 
+.filter-box .sex-options {
+    left: 66%;
+}
+.filter-box .range-options {
+    left: 0;
+}
+.groupBtn {
+    position: absolute;
+    top: 45rpx;
+    right: 120rpx;
+    color: #509d9f;
+    padding: 3rpx 6rpx;
+    border: 1px solid #509d9f;
+    font-size: 16px;
+    border-radius: 5rpx;
+    z-index: 10;
+}
+.checkbox {
+    display: block;
+    margin-bottom: 10rpx;
+}
+
+.classImage {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 10rpx;
+    vertical-align: middle;
+}

@@ -1,0 +1,20 @@
+/* pages/privacy/privacy.wxss */
+/* pages/privacy/privacy.wxss */
+.container {
+  box-sizing: border-box;
+  color: #333;
+  background-color: #e7b99e;
+  padding: 20rpx 40rpx;
+}
+.content {
+  width: 670rpx;
+  background-color: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+}
+.title {
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: bold;
+}

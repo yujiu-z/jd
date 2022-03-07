@@ -1,0 +1,60 @@
+<!--pages/cooperation/cooperation.wxml--><!--pages/patientGroup/patientGroup.wxml-->
+<!--pages/patientGroup/patientGroup.wxml-->
+<view class="container">
+    <form bindsubmit="formSubmit" report-submit>
+        <view class="box">
+            
+            <view class="searchBox">
+                <icon type="search" size="17"></icon>
+                <input bindinput="searchMemberValue" bindconfirm="searchMembers" value="{{key}}" placeholder="请输入要查询的内容" placeholder-class="color"></input>
+                <text class="searchMembers" catchtap="searchMembers"> 搜索 </text> 
+            </view>
+            
+            <view class="tapicon" bindtap="addOldNus" >
+                <!-- //新增护理服务 -->
+                <image src="https://media.lotusdata.com/144579843844057610.png"></image>
+            </view>
+
+            <block wx:for="{{ groupMembers }}" wx:key  >
+                <view   class="classifyList appointment {{item.isTouchMove ? 'activityListAct' : ''}}"  data-id="{{item.Residentsid}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}" bindtap="goAboutPage" data-idnumber='{{item.Idnumber}}' data-residentsid='{{item.Residentsid}}'  data-name="{{item.Name}}"  data-phone="{{item.Phone}}">
+                    <view class="significanceInfo appointmentInfo">
+                        <text class="name" style="float:left;line-height:80rpx;margin-right:40rpx;color:#000;font-weight:bold;"> {{ item.Name }} </text>
+                        <view class="other" style="margin-left:40rpx;line-height:80rpx;">{{ item.sex }} <text wx:if="{{type !='OldNus'}}"> {{ item.age }}</text><text wx:if="{{type=='OldNus'}}"> {{ item.age }}</text>岁
+                            <block wx:for="{{item.classList}}" wx:for-item="classImage" wx:key>
+                                <image class="classImage" src="../../assets/img/icon/001.png" wx:if="{{classImage == '001'}}"></image>
+                                <image class="classImage" src="../../assets/img/icon/002.png" wx:if="{{classImage == '002'}}"></image>
+                                <image class="classImage" src="../../assets/img/icon/003.png" wx:if="{{classImage == '003'}}"></image>
+                                <image class="classImage"  style="width:47rpx;height:47rpx;" src="../../assets/img/icon/008.png" wx:if="{{classImage == '008'}}"></image>
+                            </block>
+                        </view>
+                        <text class="idnum" style="margin-top:0rpx;font-size:35rpx;line-height:70rpx;float:left;">档案ID：{{ item.Residentsid }} </text>
+                        <!-- <text class="idnum" wx:if="{{type=='OldNus'}}">证件号：{{ item.Idnumber }} </text> -->
+                    </view>
+
+                    <view class="goAboutPage special"  bindtap="goAboutPage" data-idnumber='{{item.Idnumber}}' data-residentsid='{{item.Residentsid}}'  data-name="{{item.Name}}"  data-phone="{{item.Phone}}">
+                        <image src="{{ goOtherPage }}" style="width:50rpx;height:50rpx;float:right;margin-bottom:50rpx;margin-right:40rpx;" mode="widthFix"></image>
+                    </view>
+                  
+                </view>
+               
+            </block>
+           
+        </view>
+    
+    </form>
+</view>
+<modal wx:if="{{groupShow}}" title="居民分组" confirm-text="确定" cancel-text="取消" bindcancel="groupCancel" bindconfirm="groupConfirm">
+    <checkbox-group bindchange="getGroup">
+        <label class="checkbox" wx:for="{{groupList}}" wx:key>
+            <checkbox color="#509d9f" value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+    </checkbox-group>
+</modal>
+<modal wx:if="{{groupdataShow}}" title="慢性病疾病时间" confirm-text="确定" cancel-text="取消" bindcancel="groupCancels" bindconfirm="groupConfirms">
+       <view wx:for="{{chronic}}" wx:key class="listBorder">
+           <span style="color:green">{{chronic[index].value}}</span>日期:
+           <picker mode="date" value="{{chronic[index].date}}" start="nowTime" end="nowTime" bindchange="changeDate" style="height:60rpx;margin-top:20rpx"  data-index='{{chronic[index].value}}'>
+               <view>{{chronic[index].date}}<text></text></view>
+            </picker>
+       </view>
+</modal>

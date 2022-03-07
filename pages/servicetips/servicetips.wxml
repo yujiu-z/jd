@@ -1,0 +1,199 @@
+
+
+<scroll-view class="containers" scroll-y="true" bindscroll="toperShow">
+<form bindsubmit="formSubmit" report-submit>
+    <view class="container">
+        <view class="swiper-tab">
+            <!-- <view class="swiper-tab-list" bindtap="goComitList">当日工作量</view> -->
+            <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">今日待办</view>
+            <!-- <view class="swiper-tab-list {{currentTab==0? 'on' : ''}}" data-current="0" bindtap="swichNav">日期查询</view> -->
+            <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">服务管理</view>
+            <!-- <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">服务计划</view> -->
+            <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">服务记录</view>
+            <!-- <view class="redpoint"  wx:if="{{recordList.length > 0}}"></view> -->
+            <view class="redpoint"  wx:if="{{voteListPlan.length > 0}}"></view>
+        </view>
+
+        <view class="listShow">
+          
+            <view class="activity" wx:if="{{ currentTab==0 }}">
+                <text class="friendly" wx:if="{{ informList.length == 0 ? true : false }}"> 无数据 </text>
+                <block wx:for="{{informList}}" wx:key>
+                    <view class="informList" bindtap="newsInfo" data-type="{{item.dtype}}" data-id="{{item.noticeid}}"><view style="text-align:left;float:left;">{{item.Title}}</view> <text>{{item.publishdate}}</text> </view>
+                </block>
+            </view>
+
+          
+            <view class="activity" wx:if="{{ currentTab == 1 }}">
+                <view class="secondSwitch" wx:if="{{orgRange.length > 0}}">
+                    <picker range="{{orgRange}}" value="{{orgIndex}}" wx:if="{{click == 1}}" bindchange="changeOrg">
+                        <view> {{orgRange[orgIndex]}} <text></text> </view>
+                    </picker>
+                </view>
+
+                <view wx:if="{{click == 0}}">
+
+              <view class="date" style="display:flex;border-bottom:2rpx  solid #f0762b;background:#fff;margin-top:10rpx;">
+        <!-- <text>起始~截止日期</text> -->
+               <picker mode="date" end="{{nowTime}}" bindchange="getStartTime" value="{{startTime}}" style="margin-left:20rpx;">
+               <view class="start" style="color:#f0762b;" >{{startTime}}</view>
+           </picker>
+            <view style="line-height:100rpx;margin-left:2px;">至</view>
+                   <picker mode="date"  end="{{nowTime}}" bindchange="getEndTime" value="{{endTime}}">
+            <view  class="end"  style="color:#f0762b;">{{endTime}}</view>
+                 </picker>
+        
+          </view>
+                  <text class="friendly" wx:if="{{ recordList.length == 0 ? true : false }}"> 没有今日代办可以展示 </text>
+                    <!-- <view class="tips" wx:if="{{recordList.length === 0}}">无数据</view> -->
+                    <block wx:for="{{recordList}}" wx:key>
+                        <view class="activityList1 {{item.isTouchMove ? 'activityListAct1' : ''}}" bindtap="articleDetail" data-id="{{item.Id}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}">
+                            <view class="body">
+                                <!-- <view style="background-image: url({{item.Image}});"></view> -->
+                                <text class="activityName"> {{item.ProjectName }}     {{ item.ProjectTitle }} </text>
+                                <text class="activityDate" style="line-height:60rpx;margin-right:50rpx;"> {{ item.Remindtime }} </text>
+                            </view>
+                            <view class="operate">
+                                <view catchtap="changeArticle" data-id="{{item.Id}}">编辑</view>
+                                <view catchtap="deleteArticle" data-id="{{item.Id}}" data-index="{{index}}">删除</view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+
+                <view wx:if="{{click == 1}}">
+                    <block wx:for="{{myMienList}}" wx:key>
+                        <view class="activityList {{item.isTouchMove ? 'activityListAct' : ''}}" bindtap="articleDetail" data-id="{{item.Id}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}">
+                            <view class="body">
+                                <!-- <view style="background-image: url({{item.Image}});"></view> -->
+                                <text class="activityName"> {{ item.Title }} </text>
+                                <text class="activityDate"> {{ item.Createdate }} </text>
+                            </view>
+                            <view class="operate">
+                                <view catchtap="changeArticle" data-id="{{item.Id}}">编辑</view>
+                                <view catchtap="deleteArticle" data-id="{{item.Id}}" data-index="{{index}}">删除</view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+
+           
+            <view class="member" wx:if="{{ currentTab==2 }}">
+              
+                <view class="navbar">
+                    <text style="{{tclick == '0' ? 'background: #f0762b;color: #fff;' : 'background: #fff;color: #f0762b;'}}" bindtap="tOnClick" data-index="0">服务项目</text>
+                    <text style="{{tclick == '1' ? 'background: #f0762b;color: #fff;' : 'background: #fff;color: #f0762b;'}}" bindtap="tOnClick" data-index="1">服务包</text>
+                </view>
+                <view wx:if="{{tclick == '0'}}">
+                    <!-- <text class="friendly" wx:if="{{ informList.length == 0 ? true : false }}"> 无数据 </text> -->
+                    <text class="friendly" style="margin-top:0rpx;" > 左滑可以编辑或删除服务项目 </text>
+                    <block wx:for="{{planList}}" wx:key>
+                        <view class="activityList {{item.isTouchMove ? 'activityListAct' : ''}}" bindtap="articleDetail1" data-id="{{item.Projectid}}" bindtouchstart="touchstart1" bindtouchmove="touchmove1" data-index="{{index}}">
+                            <view class="body">
+                             
+                                <text class="activityName">  {{ item.Projectname }} </text>
+                                <text class="activityName1" style="font-size:28rpx;">  {{ item.Projecttitle }} </text>
+                                <text class="activityDate">更新时间：{{ item.Updatetime }} </text>
+                            </view>
+                            <view class="operate">
+                                <view catchtap="changePlan" data-id="{{item.Projectid}}">编辑</view>
+                                <view catchtap="deletePlan" data-id="{{item.Projectid}}" data-index="{{index}}">删除</view>
+                            </view>
+                        </view>
+                    </block>
+                    <!-- <view class="addActivity" bindtap="newServicePlan" wx:if="{{currentTab == 2 && tclick == '0'}}"> 新建+ </view> -->
+                </view>
+                <view wx:if="{{tclick == '1'}}">
+                    <text class="friendly" style="margin-top:0rpx;" > 左滑可以编辑或删除服务包 </text>
+                    <block wx:for="{{packList}}" wx:key>
+                        <view class="activityList {{item.isTouchMove ? 'activityListAct' : ''}}" bindtap="articleDetail" data-id="{{item.Packid}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}">
+                            <view class="body" >
+                                <!-- <view style="background-image: url({{item.Image}});"></view> -->
+                                <!-- <text class="activityName"> {{ item.Teamname }} </text> -->
+                                <text class="activityName2" style="line-height:70rpx; color: #333;font-size:28rpx;">  {{ item.Teamname }} </text>
+                                <text class="activityName" style="margin-top:0rpx; color: #999;font-size:28rpx;"> {{ item.Packname }} </text>
+                               
+                                <text class="activityDate " style="margin-bottom:5rpx;"> 更新时间：{{ item.Updatetime }} </text>
+                            </view>
+                            <view class="operate">
+                                <view catchtap="changePack" data-id="{{item.Packid}}">编辑</view>
+                                <view catchtap="deletePack" data-id="{{item.Packid}}" data-index="{{index}}">删除</view>
+                            </view>
+                        </view>
+                    </block>
+                    <!-- <view class="addActivity" bindtap="newServicePick" wx:if="{{currentTab == 2 && tclick == '1'}}"> 新建+ </view> -->
+                </view>
+            </view>
+            
+            <!-- <view class="activitys" wx:if="{{ currentTab==3 }}">
+                <text class="friendly" wx:if="{{ voteList.length == 0 ? true : false }}"> 没有服务计划可以展示 </text>
+                <block wx:for="{{voteList}}" wx:key style="overflow:hidden;">
+                    <view class="informList" bindtap="voteDetail" data-id="{{item.id}}" data-status='{{item.status}}' style="overflow:hidden;width:100%;">
+                        <view class='voteTitle'>{{item.title}}</view>
+                        <view class="status"><text>{{item.status }}</text></view>
+                       
+                        <text>计划时间：{{item.GroupName}}</text>
+                    </view> 
+                </block>
+                <view class="addActivity" bindtap="newActivity" > 新建+ </view>
+            </view> -->
+                   <view class="activitys" wx:if="{{ currentTab==3 }}"  >
+                    <view class="date" style="display:flex;border-bottom:2rpx  solid #f0762b;background:#fff;margin-top:-90rpx;">
+        <!-- <text>起始~截止日期</text> -->
+               <picker mode="date" end="{{nowTime}}" bindchange="getStartTime" value="{{startTime}}" style="margin-left:20rpx;">
+               <view class="start" style="color:#f0762b;" >{{startTime}}</view>
+           </picker>
+            <view style="line-height:100rpx;margin-left:2px;">至</view>
+                   <picker mode="date"  end="{{nowTime}}" bindchange="getEndTime" value="{{endTime}}">
+            <view  class="end"  style="color:#f0762b;">{{endTime}}</view>
+                 </picker>
+        
+            </view>
+            <view class="navbar" style="margin-top:30rpx;">
+                    <text style="{{tclicks == '0' ? 'background: #f0762b;color: #fff;' : 'background: #fff;color: #f0762b;'}}" bindtap="tOnClicks" data-index="0">待处理</text>
+                    <text style="{{tclicks == '1' ? 'background: #f0762b;color: #fff;' : 'background: #fff;color: #f0762b;'}}" bindtap="tOnClicks" data-index="1">已处理</text>
+                </view>
+                <view wx:if="{{tclicks == '0'}}">
+                <text class="friendly" wx:if="{{ voteListPlan.length == 0 ? true : false }}"> 没有服务记录可以展示 </text>
+                <text class="friendly" style="margin-top:0rpx;" wx:if="{{ voteListPlan.length >0 }}"> 左滑可以编辑服务记录 </text>
+                <block wx:for="{{voteListPlan}}" wx:key  style="margin-top:-100rpx;">
+                        <view class="activityList {{item.isTouchMove ? 'activityListAct' : ''}}" bindtap="changeVoteListPlan" data-id="{{item.Detailsid}}" bindtouchstart="touchstart2" bindtouchmove="touchmove2" data-index="{{index}}" >
+                            <view class="body" >
+                                <text class="activityName" style="margin-top:10rpx;"> {{ item.Projectname }} </text>
+                                <!-- <button disabled="{{item.status == '0' ? true : false}}" wx:if="{{item.drug.length != 0 && item.hidden === false}}" catchtap="confirmOneday" data-index="{{index}}" style="margin-left: 10rpx;">一键确认</button> -->
+                                <text class="activityDate " style="margin-bottom:5rpx;"> 更新时间：{{ item.Createtime }} </text>
+                            </view>
+                            <view class="operate">
+                                <view catchtap="changeVoteListPlan" data-id="{{item.Detailsid}}">编辑</view>
+                                <view catchtap="deleteVoteListPlan" data-id="{{item.Detailsid}}" data-index="{{index}}">删除</view>
+                            </view>
+                        </view>
+                    </block>
+                    </view>
+                    <view wx:if="{{tclicks == '1'}}">
+                <text class="friendly" wx:if="{{ voteListPlan.length == 0 ? true : false }}"> 没有服务记录可以展示 </text>
+                <text class="friendly" style="margin-top:0rpx;" wx:if="{{ voteListPlan.length >0 }}"> 左滑可以编辑服务记录 </text>
+                <block wx:for="{{voteListPlan}}" wx:key  style="margin-top:-100rpx;">
+                        <view class="activityList {{item.isTouchMove ? 'activityListAct' : ''}}" bindtap="changeVoteListPlan" data-id="{{item.Detailsid}}" bindtouchstart="touchstart2" bindtouchmove="touchmove2" data-index="{{index}}" >
+                            <view class="body" >
+                                <text class="activityName" style="margin-top:10rpx;"> {{ item.Projectname }} </text>
+                                <text class="activityDate " style="margin-bottom:5rpx;"> 更新时间：{{ item.Perfortime }} </text>
+                            </view>
+                            <view class="operate">
+                                <view catchtap="changeVoteListPlan" data-id="{{item.Detailsid}}">编辑</view>
+                                <view catchtap="deleteVoteListPlan" data-id="{{item.Detailsid}}" data-index="{{index}}">删除</view>
+                            </view>
+                        </view>
+                    </block>
+                    </view>
+                <view class="addActivity" bindtap="newActivity" > 新建+ </view>
+            </view>
+        </view>
+        
+    </view>
+</form>
+</scroll-view>
+
+<view class="addActivity" bindtap="newActivity" wx:if="{{currentTab == 3 && click == 3}}"> 新建+ </view>
+<button class="addActivity" style="opacity: 0;" form-type="submit" bindtap="newActivity" wx:if="{{currentTab == 1 && click == 1}}"></button>

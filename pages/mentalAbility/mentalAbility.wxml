@@ -1,0 +1,106 @@
+<!--pages/mentalAbility/mentalAbility.wxml-->
+<view class="container">
+  <view class="number">{{number}}分</view>
+  <text class="h2">精神状态与社会参与能力评分表</text>
+  <view class="rows">
+    <text>1、时间定向：</text>
+    <radio-group bindchange="gettiemlist" >
+            <label class="weui-cell weui-check__label" wx:for="{{tiemlist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>2、空间定向</text>
+    <radio-group bindchange="getspaces" >
+            <label class="weui-cell weui-check__label" wx:for="{{spaces}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>3、人物定向：</text>
+    <radio-group bindchange="getwalklist" >
+            <label class="weui-cell weui-check__label" wx:for="{{walklist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>4、记忆：</text>
+    <radio-group bindchange="getunwalklist" >
+            <label class="weui-cell weui-check__label" wx:for="{{unwalklist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>5、攻击行为：</text>
+    <radio-group bindchange="getendurancelist" >
+            <label class="weui-cell weui-check__label" wx:for="{{endurancelist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>6、抑郁症状：</text>
+    <radio-group bindchange="getlowlist" >
+            <label class="weui-cell weui-check__label" wx:for="{{lowlist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>7、强迫行为：</text>
+    <radio-group bindchange="getfoodlist" >
+            <label class="weui-cell weui-check__label" wx:for="{{foodlist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>8、财务管理：</text>
+    <radio-group bindchange="getrepairlist" >
+            <label class="weui-cell weui-check__label" wx:for="{{repairlist}}" style="padding: 0px 15px;"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows" >
+    <view class="button-sp-area">
+      <button type="primary" plain="true" bindtap="save" style="width:90%;">保存</button>
+    </view>
+  </view>
+</view>

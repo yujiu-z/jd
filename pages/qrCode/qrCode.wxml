@@ -1,0 +1,36 @@
+<!--pages/qrCode/qrCode.wxml-->
+<!--pages/qrCode/qrCode.wxml-->
+<view class="container">
+    <view class="box">
+        <picker range="{{typeArr}}" value="{{typeIndex}}" bindchange="changeType" class="pickerBox">
+            <view>{{typeArr[typeIndex]}}</view>
+            <text></text>
+        </picker>
+
+        <view class="docInfo">
+            <view class="header">
+                <view class="avatar" style="background-image: url({{docSrc}});"></view>
+                <view class="font">
+                    <view class="name">{{docName}} </view>
+                </view>
+            </view>
+            <view class="body" style="background-image: url({{wxPic}});"></view>
+            <view class="footer">{{tips}}</view>
+            <view class="btn">
+                <button bindtap="save">保存成图片</button>
+            </view>
+        </view>
+    </view>
+
+    <view class="meng" wx:if="{{settingShow}}">
+        <view class="setting">
+            <view class="tips">保存失败，您自己取消或未授权保存</view>
+            <view class="btns">
+                <button bindtap="cancel">取消</button>
+                <button open-type="openSetting" bindopensetting='handler'>去授权</button>
+            </view>
+        </view>
+    </view>
+</view>
+
+<canvas class="canvasSize" style="width: 320px; height: 390px;" canvas-id="firstCanvas"> </canvas>

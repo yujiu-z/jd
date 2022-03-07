@@ -1,0 +1,45 @@
+<view class="container">
+    <view class="teamIcon">
+    <!-- 云照护 -->
+       <!-- <image src= wx:if="{{loginWay === '2'}}"></image> -->
+       <image src="../../assets/img/logo.jpg" style="width:210rpx;height:210rpx;"></image>
+        <!-- <image src="{{ wxicon }}" wx:if="{{loginWay === '2'}}"></image>
+        <image src="{{ xhicon }}" wx:if="{{loginWay === '0' || loginWay === '1'}}"></image> -->
+    </view>
+    <view style="background:#fff;border-radius:10rpx;width:90%;">
+    <view class="loginInfo" wx:if="{{loginWay === '0'}}">
+        <input name="Phone" auto-focus="" placeholder="注册预留手机号码" placeholder-class="placeholderColor" value="" bindinput="inputPhone"></input>
+        <input name="Password" type="password" bindinput="inputPwd" placeholder-class="placeholderColor" placeholder="请输入密码" password="ture" value=""></input>
+    </view>
+    <view class="loginInfo" wx:if="{{loginWay === '1'}}">
+        <input placeholder="请输入注册预留手机号码" placeholder-class="placeholderColor" bindinput="bindKeyInput" id="docPhone" name="docPhone" type="number" maxlength="11"/>
+        <view>
+            <input placeholder="请输入验证码" placeholder-class="placeholderColor" bindinput="bindCode" id="docCode" name="docCode" maxlength="6" type="number" style="width: 380rpx;margin: 0 0 20rpx 0;" />
+            <button catchtap="getCode" disabled="{{getOnceCode == 0?true:false}}"> {{code}} </button>
+        </view>
+    </view>
+    <view class="loginInfo" wx:if="{{loginWay === '2'}}"></view>
+    <view class="loginButton">
+        <view>
+            <text bindtap='forgetPwd' wx:if="{{loginWay === '0'}}" style="margin-right:20rpx;"> 忘记密码 </text>
+            <text bindtap='changexh' wx:if="{{loginWay === '1'}}"> 账号密码登录 </text>
+            <text bindtap='changedr' wx:if="{{loginWay === '0'}}"> 验证码登录 </text>
+        </view>
+        <view class="agreement">
+        <checkbox style="transform: scale(0.8, 0.8);width:100%;" color="#FF6347" checked="{{agree}}" bindtap="iAgree"><view style="width:150%;">同意云照护<text catchtap="watchAgreement">【服务协议】</text>
+            和<text catchtap="watchPrivacy">【隐私政策】</text></view>
+            </checkbox>
+        </view>
+        <button class="btn-login" style="width:90%;line-height:60rpx;"  bindtap="loginBtn" > 登录 </button>
+        <!-- <button class="btn-login" style="width:90%;line-height:60rpx;"  bindtap="loginBtn" wx:if="{{loginWay != '2'}}"> 登录 </button> -->
+        <!-- <button class="btn-login" open-type="getUserInfo" bindtap="userInfoHandler" wx:else style="line-height:60rpx;"> 微信登录 </button> -->
+        <!-- <view class="tips" style="margin-right:120rpx;margin-top:20rpx;font-size:32rpx;"> 没有账号？<text style=" color: #f0762b;"    bindtap='register' >立即注册</text> </view> -->
+    </view>
+
+    <view class="loginWayChange">
+        <!-- <view style="background-image: url('{{wxicon}}');" wx:if="{{loginWay == 0 || loginWay == 1}}" bindtap='changewx'></view> -->
+        <!-- <view style="background-image: url('{{xhicon}}');" wx:if="{{loginWay == 2}}" bindtap='changexh'></view> -->
+        <!-- <view class="{{currentTab == 1 ? 'chooseLoginWay' : ''}}" style="background-image: url('{{xhicon}}');" bindtap='changexh'></view> -->
+    </view>    
+</view>
+</view>

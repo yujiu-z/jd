@@ -1,0 +1,247 @@
+<!--pages/oldNus/oldNus.wxml-->
+<view class="container">
+  <view class="rows">
+    <text style="color:red" class="must">*</text>
+    <text>申请人姓名：</text>
+    <view class='rightrow' >
+      <input type="text"   placeholder="申请人姓名" bindinput="getName" value="{{savedata.Name}}"/>
+    </view>
+  </view>
+
+  <view class="rows">
+    <text style="color:red" class="must">*</text>
+    <text>身份证号：</text>
+    <view class='rightrow'>
+      <input type="text"  placeholder="申请人身份证号"  bindinput="getidnumber"  value="{{savedata.Idnumber}}" disabled="{{change}}"/>
+    </view>
+  </view>
+
+  <view class="rows">
+    <text style="color:red" class="must">*</text>
+    <text>出生日期：</text>
+    <view class='rightrow'  style="padding-right:80rpx;">
+      <picker mode="date" value="{{savedata.Birthday}}" style=" font-size:25rpx;padding-right:30rpx;width:100%;height:100%;font-size:25rpx;padding-left:10rpx;width:100%;height:100%;color:#888;text-align:right;padding-right:10%;color:#888"   placeholder="出生日期" bindchange="getbirthday">
+          {{savedata.Birthday}}
+      </picker>
+      <text class="icon"></text>
+    </view>
+  </view>
+
+  <view class="rows">
+    <text style="color:red" class="must">*</text>
+    <text>年龄：</text>
+    <view class='rightrow' >
+      <input type="text"   placeholder="申请人年龄" bindinput="getage" value="{{savedata.Age}}"/>
+    </view>
+  </view>
+
+  <view class="rows">
+    <text>性别：</text>
+    <radio-group bindchange="sexChange" style="float: right;width: 65%;padding: 0px 15px;">
+            <label class="weui-cell weui-check__label" wx:for="{{sexs}}" style="width: 50%;box-sizing: border-box;float: left;padding: 0px 15px;" wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}" />
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  
+  <view class="rows">
+    <text style="color:red" class="must">*</text>
+    <text>手机：</text>
+    <view class='rightrow' >
+      <input type="text"   placeholder="手机号" bindinput="getphone" value="{{savedata.Phone}}"/>
+    </view>
+  </view>
+  <view class="rows">
+    <text>户籍地址：</text>
+    <view class='rightrow'>
+      <input type="text"  placeholder='户籍地址（区/县、街/镇、村/居）' value="{{savedata.Registeredplace}}" bindinput="getaddress"/>
+    </view>
+  </view>
+
+  <view class="rows">
+    <text>居住地址：</text>
+    <view class='rightrow'>
+      <input type="text"  placeholder='(区/县、街/镇、村/居) 路-号-房' bindinput="getnewaddress" value="{{savedata.Adress}}"/>
+    </view>
+  </view>
+
+  <view class="rows">
+    <text>婚姻状况：</text>
+    <radio-group bindchange="marriageChange"  style="">
+            <label class="weui-cell weui-check__label" style="padding: 0px 15px;display:flex;" wx:for="{{marriages}}"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>居住情况：</text>
+    <radio-group bindchange="livesChange"  >
+            <label class="weui-cell weui-check__label" style="padding: 0px 15px;display:flex;" wx:for="{{lives}}"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>填写人类型：</text>
+    <radio-group bindchange='getfillintype'  style="float: right;width: 60%;padding: 0px 15px;">
+            <label class="weui-cell weui-check__label" wx:for="{{items}}" style="width: 50%;box-sizing: border-box;float: left;padding: 0px 15px;" wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows" wx:if="{{fillintype==1}}">
+    <text>代理人姓名：</text>
+    <view class='rightrow' >
+      <input type="text"   placeholder="代理人姓名" value="{{savedata.Agentname}}" bindinput="getAgentname"/>
+    </view>
+  </view>
+
+  <view class="rows" wx:if="{{fillintype==1}}">
+    <text>与申请人关系：</text>
+    <view class='rightrow' >
+      <input type="text"   placeholder="关系" value="{{savedata.Relation}}" bindinput="getRelation"/>
+    </view>
+  </view>
+
+  <view class="rows" wx:if="{{fillintype==1}}">
+    <text>代理人地址：</text>
+    <view class='rightrow' >
+      <input type="text"   placeholder="(区/县、街/镇、村/居) 路-号-房" value="{{savedata.Agentadress}}" bindinput="getAgentadress"/>
+    </view>
+  </view>
+
+  
+  <view class="rows" wx:if="{{fillintype==1}}">
+    <text>代理人电话：</text>
+    <view class='rightrow' >
+      <input type="text"   placeholder="代理人手机号" value="{{savedata.Agentphone}}" bindinput="getAgentphone"/>
+    </view>
+  </view>
+
+  <view class="rows">
+    <text style="color:red" class="must">*</text>
+    <text>评估日期：</text>
+    <view class='rightrow' style="padding-right:80rpx;">
+      <picker mode="date" value="{{savedata.Evaluationtime}}" style="font-size:25rpx;width:100%;height:100%;color:#888;text-align:right;"   placeholder="评估日期" bindchange="getEvaluationtime">
+          {{savedata.Evaluationtime}}
+      </picker>
+      <text class="icon"></text>
+    </view>
+  </view>
+
+  <view class="rows" wx:if="{{change}}">
+    <text>评估类型：</text>
+    <radio-group bindchange='getAssessmenttype' >
+            <label class="weui-cell weui-check__label"   style="padding: 0px 15px;" wx:for="{{Assessmenttypelist}}" wx:key="{{item.value}}" >
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}" disabled="true"/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text style="width:40%;">老年人能力等级：</text>
+    <radio-group bindchange="getoldability"  >
+            <label class="weui-cell weui-check__label"  style="padding: 0px 15px;display:flex;" wx:for="{{oldability}}"  wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}" disabled='{{isDisabled}}'/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>护理需求等级：</text>
+    <radio-group bindchange="needlistchange"  >
+            <label class="weui-cell weui-check__label"  style="padding: 0px 15px;display:flex;" wx:for="{{needlist}}"   wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked="{{item.checked}}" disabled='{{isDisabled}}'/>
+              </view>
+              <view class="weui-cell__bd">{{item.name}}</view>
+            </label>
+      </radio-group>
+  </view>
+
+  <view class="rows">
+    <text>老年人日常生活活动能力</text>
+    <view class="tele" wx:if="{{savedata.Richangshenghuoid == ''}}">x</view>
+    <view class="success" wx:if="{{savedata.Richangshenghuoid != ''}}">
+      <image src="https://media.lotusdata.com/102938436008165249.png" class="successicon"></image>
+    </view>
+    <button class="mini-btn tapchange" type="primary" size="mini"  data-id="{{savedata.Elderyid}}"  data-rid="{{savedata.Richangshenghuoid}}"  data-residentsid='{{savedata.Residentsid}}' bindtap="gooldsun">
+      <text wx:if="{{savedata.Richangshenghuoid == ''}}">填写</text>
+      <text wx:if="{{savedata.Richangshenghuoid != ''}}">修改</text>
+    </button>
+  </view>
+
+  <view class="rows">
+    <text>精神状态与社会参与能力</text>
+    <view class="tele" wx:if="{{savedata.Jingshenzhuangtaiid == ''}}">x</view>
+    <view class="success" wx:if="{{savedata.Jingshenzhuangtaiid != ''}}">
+      <image src="https://media.lotusdata.com/102938436008165249.png" class="successicon"></image>
+    </view>
+    <button class="mini-btn tapchange" type="primary" size="mini"  data-id="{{savedata.Elderyid}}"  data-rid="{{savedata.Richangshenghuoid}}"  data-Jingshenzhuangtaiid='{{savedata.Jingshenzhuangtaiid}}' bindtap="gooldJi">
+      <text wx:if="{{savedata.Jingshenzhuangtaiid == ''}}">填写</text>
+      <text wx:if="{{savedata.Jingshenzhuangtaiid != ''}}">修改</text>
+    </button>
+  </view>
+
+  <view class="rows">
+    <text>感知觉与沟通能力评分表</text>
+    <view class="tele" wx:if="{{savedata.Ganzhijueid == ''}}">x</view>
+    <view class="success" wx:if="{{savedata.Ganzhijueid != ''}}">
+      <image src="https://media.lotusdata.com/102938436008165249.png" class="successicon"></image>
+    </view>
+    <button class="mini-btn tapchange" type="primary" size="mini"  data-id="{{savedata.Elderyid}}"  data-rid="{{savedata.Richangshenghuoid}}"  data-Ganzhijueid='{{savedata.Ganzhijueid}}' bindtap="gooldga">
+      <text wx:if="{{savedata.Ganzhijueid == ''}}">填写</text>
+      <text wx:if="{{savedata.Ganzhijueid != ''}}">修改</text>
+    </button>
+  </view>
+
+  <view class="rows">
+    <text>老年综合征罹患情况</text>
+    <view class="tele" wx:if="{{savedata.Sufferid == ''}}">x</view>
+    <view class="success" wx:if="{{savedata.Sufferid != ''}}">
+      <image src="https://media.lotusdata.com/102938436008165249.png" class="successicon"></image>
+    </view>
+    <button class="mini-btn tapchange" type="primary" size="mini" data-id="{{savedata.Elderyid}}"  data-rid="{{savedata.Richangshenghuoid}}"  data-Sufferid='{{savedata.Sufferid}}' bindtap="gooldSUff">
+      <text wx:if="{{savedata.Sufferid == ''}}">填写</text>
+      <text wx:if="{{savedata.Sufferid != ''}}">修改</text>
+    </button>
+  </view>
+
+  <view class="rows">
+      <text>医生签字： </text> 
+      <text class="mini-btn tapchange" type="primary" bindtap="toSig">去签字</text>
+  </view>
+  <view class="signature">
+        <image src="{{signature}}"></image>
+  </view>
+ 
+
+  <view class="rows" >
+    <view class="button-sp-area">
+      <button type="primary" plain="true" style="width:100%" bindtap="saves" wx:if="{{!change}}" data-id="1">开始评估</button>
+      <button type="primary" plain="true" style="width:100%" bindtap="saves" wx:if="{{change}}" data-id='1'>修改</button>
+    </view>
+  </view>
+</view>

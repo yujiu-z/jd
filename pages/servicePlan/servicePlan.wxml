@@ -1,0 +1,34 @@
+<!--pages/servicePlan/servicePlan.wxml-->
+
+<scroll-view scroll-y class="container">
+    <!-- <view class="listBorder">
+        <text>首页：</text>
+    </view> -->
+    <view class="listBorder">
+        <text>服务项目<text style="color: red;"> * </text></text>
+        <input  bindinput="getProjectname"  value="{{ projectname }}" placeholder="请输入服务项目名称" placeholder-class="color"></input>
+    </view>
+    <view class="listBorders" style="width:100%;height:400rpx;background:#fff;">
+        <text> 服务项目详情</text>
+        <textarea  bindinput="getProjectTitle" value="{{ projectTitle}}" placeholder=" 请输入服务详情" placeholder-class="color"></textarea>
+    </view>
+    <view class="listBorders" style="width:100%;height:400rpx;background:#fff;">
+        <text> 服务介绍</text>
+        <textarea  bindinput="getIntroduce" value="{{ introduce}}" placeholder=" 请输入服务介绍" placeholder-class="color"></textarea>
+    </view>
+    <view class="listBorder">
+        <text>服务项目价格<text style="color: red;"> * </text></text>
+        <input  bindinput="getProjectRMB"  value="{{ projectRMB }}" placeholder="请输入(大写)RMB" placeholder-class="color"></input>
+    </view>
+    <view class="listBorder" wx:if="{{inputDis == true}}">
+        <text>服务包状态<text style="color: red;"> * </text></text>
+        <picker bindchange="getStatus" range="{{serviceStatus}}" value="{{status}}">
+            <view>{{serviceStatus[status]}}<text></text></view>
+        </picker>
+    </view>
+   
+</scroll-view>
+
+<view class="btn" bindtap="edit" wx:if="{{inputDis == true}}">{{'编辑'}}</view>
+<view class="btn" bindtap="save" wx:if="{{inputDis == false}}">保存</view>
+

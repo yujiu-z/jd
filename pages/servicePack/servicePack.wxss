@@ -1,0 +1,79 @@
+/* pages/servicePack/servicePack.wxss */
+
+/* pages/plan/plan.wxss */
+/* pages/personalInformation/personalInformation.wxss */
+/* pages/personalInformation/personalInformation.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  /* background:#509d9f; */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top:-200rpx;
+  padding-bottom: 80rpx;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+.btn {
+  width: 100%;
+  height: 80rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: #f0762b;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.oneItem {
+  border-bottom: 10rpx solid #eee;
+}
+
+.oneItem > .listBorder {
+  border-bottom: none;
+}
+.listBorders  textarea{
+  width:94%;
+  height:300rpx;
+  border: 1rpx solid #eee;
+  border-radius:10rpx;
+}
+.checkbox {
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.listChoose {
+  padding: 20rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+
+.listChoose > text {
+  font-size: 32rpx;
+  color: #666;
+}
+
+.listChoose > .checkbox {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.listChoose input {
+  width: 500rpx;
+  height: 60rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+}

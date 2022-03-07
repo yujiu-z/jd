@@ -1,0 +1,40 @@
+<!--pages/residentsArchives/residentsArchives.wxml-->
+<!--manage/workUnit/workUnit.wxml-->
+<view class="containers">
+
+  <view class="searchBox" >
+                <!-- <image src="https://images.yitushijie.com/btn_nav_JianTou@2x.png" wx:if="{{currentTab == 0 ? isSearch[0].isSearch : isSearch[1].isSearch}}" bindtap="backSearch"></image> -->
+                <view class="inputBox">
+                    <input placeholder='输入关键字搜索' bindinput="searchKeywords" bindconfirm="searchs" value="{{ queryunit }}"></input>
+                    <view class="button" bindtap="searchs">搜索</view>
+                </view>
+            </view>
+   <view class="nowChange">
+            <text> 当前选择: </text>
+            <view class="personName">
+                 <text>{{ name }} </text>
+              
+            </view>
+        </view>
+  <view class="patientList"  >
+
+        <block wx:for="{{ tableData }}" wx:key>
+            <view class="size"  bindtap="thisPerson" data-index="{{ index }}" data-id="{{ item.Residentsid }}" data-name="{{ item.Name }}">
+           
+                <view class="change">
+                    <view wx:if="{{ item.click == true}}"></view>
+                </view>
+                <view class="patientInfo" style="line-height:46rpx;">
+                    <view class="wordInfo">
+                        <text class="content bottom"> {{ item.Name }} </text>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+     <view class="send">
+        <button  bindtap="changeList"> 确定 </button>
+    </view>
+</view>
+
+

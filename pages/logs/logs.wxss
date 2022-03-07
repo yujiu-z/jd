@@ -1,0 +1,198 @@
+page {
+  background: #fff;
+  overflow-x:hidden;
+}
+.container{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+.teamIcon {
+  margin-top: 0rpx;
+  text-align: center;
+  line-height:80rpx;
+  font-size: 40rpx;
+  color: #fff;
+  font-weight:bold;
+}
+
+.teamIcon > text {
+  display: block;
+  color: #999;
+}
+
+/* .teamIcon > image {
+  display: block;
+  padding-top: 80rpx;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 auto;
+} */
+
+.loginInfo {
+    height: 184rpx;
+  margin-top: 90rpx;
+} 
+
+.loginInfo input {
+  margin: 0 auto 20rpx;
+  width: 600rpx;
+  height: 70rpx;
+  padding-left: 20rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.loginInfo view {
+    width: 620rpx;
+    position: relative;
+    padding-right: 200rpx;
+    box-sizing: border-box;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.loginInfo view button {
+    position: absolute;
+    right: 0;
+    width:250rpx;
+    height:70rpx;
+    /* padding: 0 20rpx; */
+    /* margin-left:10%; */
+    text-align: center;
+    border-radius: 10rpx;
+    background: #f0762b;
+    color: #ffffff;
+    font-size: 28rpx;
+    top: -5rpx;
+}
+
+.loginInfo > input:last-child {
+    margin-top: 20rpx;
+}
+
+.loginButton {
+  position: relative;
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.loginButton > button {
+  width: 650rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 50rpx;
+  background: #f0762b;
+  font-size: 36rpx;
+  color: #fff;
+  margin-top: 160rpx;
+}
+
+.loginButton > view {
+    height: 50rpx;
+    text-align: right;
+    padding: 0 60rpx;
+    box-sizing: border-box;
+}
+
+.loginButton > view > text {
+  display: inline-block;
+  font-size: 32rpx;
+  color: #f0762b;
+}
+
+.loginButton > text:last-child {
+    display: block;
+    font-size: 32rpx;
+    /* line-height:60rpx; */
+    line-height:100rpx;
+    text-align: center;
+    color: #999!important;
+}
+
+.loginButton > .agreement {
+  padding: 0 0;
+  text-align: left;
+  height: auto;
+  position: absolute;
+  top: 110rpx;
+  left: 0rpx;
+  width:90%;
+  font-size: 36rpx;
+}
+
+.loginButton > .agreement text {
+  color: #f0762b;
+  width:120rpx;
+  text-decoration: underline;
+}
+
+.remark {
+  width: 600rpx;
+  margin: 60rpx auto 20rpx;
+  padding: 20rpx 50rpx 20rpx 20rpx;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 50rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.loginWayChange{
+    width: 100%;
+    height: 170rpx;
+    padding: 25rpx 220rpx 25rpx;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginWayChange > view {
+    width: 110rpx;
+    height: 110rpx;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.lineCon {
+  width: 70%;
+  overflow: hidden;
+  margin: -20rpx auto 0;
+}
+
+.lineL {
+  height: 1rpx;
+  border-top: 0.5px solid #d3d3d3;
+  margin-top: 20rpx;
+  width: 40%;
+  float: left;
+}
+
+.lineR {
+  height: 1rpx;
+  border-top: 0.5px solid #d3d3d3;
+  margin-top: 20rpx;
+  width: 40%;
+  float: right;
+}
+
+.lineWord {
+  float: left;
+  width: 19%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #999;
+}
+.register-btn {
+  text-align: center;
+  border-radius: 60rpx;
+  overflow: hidden !important;
+  background-color: #fff !important;
+  color: #f0762b !important;
+  border:none;
+  margin-top:10rpx;
+  font-size: 36rpx;
+}

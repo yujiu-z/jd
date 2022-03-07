@@ -1,0 +1,139 @@
+<!--pages/news/news.wxml-->
+<!-- pages/team/team.wxml  -->
+<scroll-view class="containers" scroll-y="true" bindscroll="toperShow">
+<form bindsubmit="formSubmit" report-submit>
+    <view class="container">
+        <!-- <view class="head" bindtap="goComitList">
+            <image src="{{ teamIcon }}"></image>
+            <text> 陕西省保健学会 </text>
+            <image src="{{ goOtherPage }}"></image>
+        </view> -->
+
+        <view class="swiper-tab">
+            <!-- <view class="swiper-tab-list" bindtap="goComitList">当日工作量</view> -->
+            <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">当日工作量</view>
+            <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">本月工作量</view>
+          
+        </view>
+
+       
+
+        <view class="listShow">
+            <!-- 通知 -->
+            <view class="activity" wx:if="{{ currentTab==0 }}">
+                <text class="friendly" wx:if="{{ informList.length == 0 ? true : false }}">          无数据 </text>
+                <block wx:for="{{informList}}" wx:key>
+                    <view class="informList" bindtap="newsInfo" data-type="{{item.dtype}}" data-id="{{item.noticeid}}"><view>{{item.Title}}</view> <text>{{item.publishdate}}</text> </view>
+                </block>
+            </view>
+
+            <!-- 专委会风采 -->
+            <view class="activity" wx:if="{{ currentTab == 1 }}">
+                <view class="secondSwitch" wx:if="{{orgRange.length > 0}}">
+                    <view class="switch">
+                        <view class="{{click == 0 ? 'activeSwitch' : ''}}" bindtap="secondSwitchChange" data-tab="0">风采展示</view>
+                        <view class="{{click == 1 ? 'activeSwitch' : ''}}" bindtap="secondSwitchChange" data-tab="1">编辑风采</view>
+                    </view>
+
+                    <picker range="{{orgRange}}" value="{{orgIndex}}" wx:if="{{click == 1}}" bindchange="changeOrg">
+                        <view> {{orgRange[orgIndex]}} <text></text> </view>
+                    </picker>
+                </view>
+
+                <view wx:if="{{click == 0}}">
+                    <view class="tips" wx:if="{{mienList.length === 0}}">无数据</view>
+                    <block wx:for="{{mienList}}" wx:key>
+                        <view class="activityList" bindtap="articleDetail" data-id="{{item.Id}}" >
+                            <view class="body">
+                                <!-- <view style="background-image: url({{item.Image}});"></view> -->
+                                <text class="activityName"> {{ item.Title }} </text>
+                                <text class="activityDate"> {{ item.Releasedate }} </text>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+
+                <view wx:if="{{click == 1}}">
+                    <block wx:for="{{myMienList}}" wx:key>
+                        <view class="activityList {{item.isTouchMove ? 'activityListAct' : ''}}" bindtap="articleDetail" data-id="{{item.Id}}" bindtouchstart="touchstart" bindtouchmove="touchmove" data-index="{{index}}">
+                            <view class="body">
+                                <view style="background-image: url({{item.Image}});"></view>
+                                <text class="activityName"> {{ item.Title }} </text>
+                                <text class="activityDate"> {{ item.Createdate }} </text>
+                            </view>
+                            <view class="operate">
+                                <view catchtap="changeArticle" data-id="{{item.Id}}">编辑</view>
+                                <view catchtap="deleteArticle" data-id="{{item.Id}}" data-index="{{index}}">删除</view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+
+            <!-- 缴费 -->
+            <view class="member" wx:if="{{ currentTab==2 }}">
+                <!-- <text class="friendly" wx:if="{{ orgList.length >= 1 }}"> 点击单个委员会查看缴费项目 </text>
+                <text class="friendly" wx:if="{{ orgList.length == 0 }}"> 您当前还没有加入任何委员会，请先加入一个委员会吧 </text>
+                <view class="payList" sytle="height:{{item.itemShow ? 'auto' : '145rpx'}}" wx:for="{{orgList}}" wx:key>
+                    <view class="top" bindtap="examineMemberInfo" data-id="{{ item.Groupid }}" data-index="{{index}}">
+                        <image class="logo" src="{{item.Logopic}}"></image>
+                        <text class="memberName"> {{ item.Groupname }} </text>
+                        <image class="arrows" src="{{goOtherPage}}" style="transform: rotate({{item.itemShow ? 270 : 90}}deg)"></image>
+                    </view>
+                    <view class="itemList" wx:if="{{item.itemShow}}">
+                        <view class="friendly" wx:if="{{item.items.length == 0}}">该委员会暂无缴费项目</view>
+                        <view class="payItem" wx:for="{{item.items}}" wx:for-item="pay" wx:key catchtap="payDetail" data-id="{{pay.itemid}}" data-fee="{{pay.moneyfee}}" data-title="{{pay.title}}">
+                            <view>
+                                <image src='../../assets/img/pay.png' style='margin-right: 10rpx;'></image>
+                                <text>{{pay.title}}</text>
+                            </view>
+                            <image src="{{goOtherPage}}"></image>
+                        </view>
+                        <view style='height: 20rpx;background: #eee;'></view>
+                    </view>
+                    <button form-type="submit" bindtap="examineMemberInfo" data-id="{{ item.Groupid }}" data-index="{{index}}"> 会员 </button>
+                </view> -->
+                <text class="friendly" wx:if="{{ orgList.length == 0 }}"> 您尚未加入任何委员会 </text>
+                <text class="friendly" wx:if="{{ orgList.length > 0 && pubList.length >= 1 }}"> 点击项目进行年度缴费查询 </text>
+                <text class="friendly" wx:if="{{ orgList.length > 0 && pubList.length == 0 }}"> 目前没有相关项目 </text>
+                <view class="itemList"  wx:if="{{ orgList.length > 0 }}">
+                    <view class="pubOption" wx:for="{{pubList}}" catchtap="payDetail" wx:key data-id="{{item.itemid}}" data-type="org" data-fee="{{item.moneyfee}}" data-title="{{item.title}}">
+                        <view>
+                            <image src='../../assets/img/pay.png' style='margin-right: 10rpx;'></image>
+                            <text style="margin-left: 20px;">{{item.title}}</text>
+                        </view>
+                        <image src="../../assets/img/point.png"></image>
+                    </view>
+                    <view class="pubOption" wx:for="{{bookList}}" catchtap="payDetail" wx:key data-id="{{item.RecordID}}" data-type="book" data-fee="{{item.moneyfee}}" data-title="{{item.title}}">
+                        <view>
+                            <view class="book">
+                                <image src="../../assets/img/book.png"></image>
+                            </view>
+                            <!-- <image src='../../assets/img/pay.png' style='margin-right: 10rpx;'></image> -->
+                            <text style="margin-left: 20px;">{{item.title}}<text style="font-size:20rpx;">({{item.Name}})</text></text>
+                        </view>
+                        <image src="../../assets/img/point.png"></image>
+                    </view>
+                </view>
+               
+            </view>
+            <!-- 投票 -->
+            <view class="activity" wx:if="{{ currentTab==3 }}">
+                <text class="friendly" wx:if="{{ voteList.length == 0 ? true : false }}"> 没有投票可以展示 </text>
+                <block wx:for="{{voteList}}" wx:key style="overflow:hidden;">
+                    <view class="informList" bindtap="voteDetail" data-id="{{item.id}}" data-status='{{item.status}}' style="overflow:hidden;">
+                        <view class='voteTitle'>{{item.title}}</view>
+                        <view class="status"><text>{{item.status }}</text></view>
+                        <!-- <view class="status"><text>{{item.status2 }}</text></view> -->
+                        <!-- <text>截止时间：{{item.deadline}}</text> -->
+                        <text>委员会：{{item.GroupName}}</text>
+                    </view> 
+                </block>
+            </view>
+        </view>
+    </view>
+</form>
+</scroll-view>
+
+<view class="addActivity" bindtap="newActivity" wx:if="{{currentTab == 1 && click == 1}}"> 新建+ </view>
+<button class="addActivity" style="opacity: 0;" form-type="submit" bindtap="newActivity" wx:if="{{currentTab == 1 && click == 1}}"></button>

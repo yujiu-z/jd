@@ -1,0 +1,94 @@
+/* pages/elderlyPatients/elderlyPatients.wxss */
+
+.container {
+  width: 100%!important;
+  height: auto!important;
+  box-sizing: border-box;
+  padding: 20rpx;
+  color: #444;
+}
+
+.number{
+  position: fixed;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  top: 100rpx;
+  right: 35rpx;
+  border-radius: 50%;
+  font-size: 20rpx;
+  text-align: center;
+  border: 1rpx #000 solid;
+  /* border-radius: #ccc; */
+  z-index: 100;
+}
+
+.h2{
+  font-size: 32rpx;
+  display: block;
+  box-sizing: border-box;
+  padding: 10rpx 0rpx;
+  text-align: center;
+}
+
+.rows{
+  width:90%;
+  min-height: 80rpx;
+  height: auto;
+  padding: 10rpx 30rpx;
+  position: relative;
+  background-color: #fefefe;
+  line-height: 80rpx;
+  border-radius: 5rpx;
+}
+
+
+
+.rows text{
+  width: 30%;
+}
+
+.rows .must{
+  color: red;
+  position: absolute;
+  top: 10rpx;
+  left: 12rpx;
+}
+
+.rows .rightrow input{
+  border: 1rpx solid #ccc;
+  display: inline-block;
+  border-radius: 4rpx;
+  margin-top: 10rpx;
+  padding-top: 5rpx;
+  width: 100%;
+  font-size: 25rpx;
+  color: #888;
+  padding-bottom: 7rpx;
+  padding-left: 15rpx;
+}
+
+.rows .rightrow{
+  float: right;
+  width: 65%;
+  box-sizing: border-box;
+  padding: 0px 15px;
+}
+
+.rows .rightrow .icon{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-width: 10rpx;
+  border-style: solid;
+  border-color: #999 transparent transparent transparent;
+  position: absolute;
+  right: 60rpx;
+  top: 45%;
+}
+
+.other{
+  border: 1rpx solid #ccc;
+  font-size: 35rpx;
+  padding: 10rpx 20rpx;
+}

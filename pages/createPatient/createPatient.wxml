@@ -1,0 +1,14 @@
+<!--pages/createPatient/createPatient.wxml-->
+<view class="container">
+    <view class="listBorder">
+        <text> 身份证号 </text>
+        <view class="scanBtn">
+            <image src="../../assets/img/scan.png"></image>
+            <ocr-navigator class="scan" bind:onSuccess="scanSuccess" certificateType="idCard" opposite="{{false}}" selectedOptions="{{['id', 'name', 'sex', 'homePlace']}}">
+                <button type="primary">身份证识别</button>
+            </ocr-navigator>
+        </view>
+        <input type="idcard" bindinput="getIdnum" value="{{ idnum }}" placeholder="请输入"     placeholder-class="color" maxlength="18"></input>
+    </view>
+    <view class="exist" bindtap="exist">查询</view>
+</view>

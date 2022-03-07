@@ -1,0 +1,10 @@
+<!--pages/signature/signature.wxml-->
+<view class="container">
+  <canvas type="2d" class="my-can" id='firstCanvas' bindtouchstart="bindtouchstart" bindtouchmove="bindtouchmove" bindtouchend="bindtouchend"></canvas>
+  <view class="btn">
+    <view class="instruction">请在下方区域签字</view>
+    <view bindtap='clear' class="clear">清除</view>
+    <view   bindtap='export' class="submit">提交</view>
+  </view>
+</view>
+

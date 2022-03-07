@@ -1,0 +1,61 @@
+<!--pages/melist/melist.wxml-->
+<form report-submit bindsubmit="formSubmit">
+    <!-- <view class="container" 
+    style="position: {{firstLogin ? 'fixed' : 'static'}};"
+    > -->
+        <view class="userinfo" bindtap="changImgs">
+            <view class="avatar">
+                <image src="{{ doctorImg }}" class="image" bindtap="bigImg" ></image>
+            </view>
+            <view class="classname">
+                <text> {{ doctorName }} </text>
+            </view>
+            <image src="{{ goOtherPage }}" style="width: 30px;height: 30px;position: absolute;top: 34%;right: 20px;"></image>
+        </view>
+        
+        <!-- <view class="distance" style="margin-top: 0rpx">
+            <block wx:for="{{codeList}}" wx:key="text">
+                <navigator class="list" wx:if="{{ index == 1 && status == 1 }}" target="miniProgram" open-type="navigate" app-id="wxb749c5b8e8473763" path="page/docCon/docCon?docId={{docId}}" version="trial">
+                    <view class="border">
+                        <text> {{ item.text }} </text>
+                        <image class="goIcon" src="{{ goOtherPage }}"></image>
+                        <text style="float:right;margin-right:5rpx;"> {{ item.enjoy }} </text>
+                        <image class="erweima" wx:if="{{ item.id == 2 }}" src="{{ docQrodeIcon }}"></image>
+                    </view>
+                    <button form-type="submit" id="{{item.id}}"> 名片 </button>
+                </navigator>
+
+                <view class="list" wx:else>
+                    <view class="border">
+                        <image src="https://media.lotusdata.com/87285297120814657.png" alt="" class="goIcons" wx:if="{{item.text == '我的名片'}}"></image>
+                        <image src="https://media.lotusdata.com/87285450884023946.png" alt="" class="goIcons" wx:if="{{item.text == '我的小程序码'}}"></image>
+                        <text> {{ item.text }} </text>
+                        <image class="goIcon" src="{{ goOtherPage }}"></image>
+                        <text style="float:right;margin-right:5rpx;"> {{ item.enjoy }} </text>
+                        <image class="erweima" wx:if="{{ item.id == 2 }}" src="{{ docQrodeIcon }}"></image>
+                    </view>
+                    <button form-type="submit" bindtap="{{ item.onclick }}" id="{{item.id}}"> 名片 </button>
+                </view>
+            </block>
+        </view> -->
+
+        <view class="distance" style="margin-top:20rpx;">
+            <block wx:for="{{proList}}" wx:key="text">
+                <view class="list">
+                    <view class="border">
+                        <image src="https://media.lotusdata.com/87284799793825418.png" alt="" class="goIcons" wx:if="{{item.text == '物联设备'}}"></image>
+                        <image src="https://media.lotusdata.com/87284762984613514.png" alt="" class="goIcons" wx:if="{{item.text == '设置'}}"></image>
+                        <image src="https://media.lotusdata.com/87285853319079489.png" alt="" class="goIcons" wx:if="{{item.text == '更多小程序'}}"></image>
+                        <image src="https://media.lotusdata.com/87286104474028548.png" alt="" class="goIcons" wx:if="{{item.text == '帮助'}}"></image>
+                        <image src="https://media.lotusdata.com/87284023713368216.png" alt="" class="goIcons" wx:if="{{item.text == '客服'}}"></image>
+                        <text> {{ item.text }} </text>
+                       
+                        <image class="goIcon" src="{{ goOtherPage }}"></image>
+                    </view>
+                    <button open-type='contact' wx:if="{{item.text == '客服'}}"></button>
+                    <button form-type="submit" bindtap="{{ item.onclick }}" wx:else> 第四 </button>
+                </view>
+            </block>
+        </view>
+    <!-- </view> -->
+</form>

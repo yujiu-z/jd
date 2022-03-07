@@ -1,0 +1,204 @@
+<!--pages/informationSheet/informationSheet.wxml-->
+<!-- <text>pages/informationSheet/informationSheet.wxml</text> -->
+<scroll-view scroll-y class="container">
+    <!-- <view class="listBorder">
+        <text> 姓名 <text style="color: red;"> * </text></text>
+        <input  bindinput="getName" bindblur="giveLinkName" value="{{ cover.name }}" placeholder="请输入姓名" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 封面编号 </text>
+        <input disabled="{{inputDis}}" bindinput="getCode" value="{{ cover.code }}" placeholder="请输入编号" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 现住址  <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getnowAddress" bindcolumnchange='getnowAddress' range='{{nowonlyArray}}'  mode='multiSelector' >
+            <view>
+              {{nowaddress}}<text></text>
+            </view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 户籍地址 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getAddress" bindcolumnchange='getAddress' range='{{onlyArray}}'  mode='multiSelector' >
+            <view>
+                {{Nativeplace}}<text></text>
+            </view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 联系电话 </text>
+        <input disabled="{{inputDis}}" type="number" bindinput="getPhone" bindblur="giveLinkPhone" value="{{ cover.phone }}" placeholder="请输入联系电话" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 乡村，街道，门牌号 </text>
+        <input disabled="{{inputDis}}" bindinput="getStreetName" value="{{ cover.streetName }}" placeholder="请输入乡村，街道，门牌号" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 村（居）委会名称 </text>
+        <input disabled="{{inputDis}}" bindinput="getVillage" value="{{ cover.village }}" placeholder="请输入村（居）委会名称" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 建档单位 </text>
+        <input disabled="{{inputDis}}" bindinput="getUnit" value="{{ cover.unit }}" placeholder="请输入建档单位" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 建档人 </text>
+        <input disabled="{{inputDis}}" bindinput="getPerson" value="{{ cover.person }}" placeholder="请输入建档人" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 建档状态</text>
+        <picker disabled="{{inputDis}}" bindchange="getStatuslist" range="{{Documentstatuslist}}" value="{{Documentstatus}}">
+            <view>{{Documentstatuslist[Documentstatus]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 责任医生 </text>
+        <input disabled="{{inputDis}}" bindinput="getDoctor" value="{{ cover.doctor }}" placeholder="请输入责任医生" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 建档日期 </text>
+        <input disabled value="{{ cover.createDate }}"></input>
+    </view>
+
+    <view class="listChoose" style="height: 60rpx;">
+        <text style="float: left;"> 是否上传公卫 </text>
+        <view style="float: right;">
+            否 <switch disabled="{{inputDis}}" checked="{{Upload}}" bindchange="changeUpload" color="#f0762b"></switch> 是
+        </view>
+    </view> -->
+
+    <view class="listBorder" style="margin-top: 20rpx">
+        <text>居民建档信息：</text>
+    </view>
+    <!-- <view class="listBorder">
+        <text> 个人信息表编号 </text>
+        <input disabled="{{inputDis}}" bindinput="getBaseCode" value="{{ base.code }}" placeholder="请输入编号" placeholder-class="color"></input>
+    </view> -->
+    <view class="listBorder">
+        <text> 姓名 <text style="color: red;"> * </text></text>
+        <input  bindinput="getName" bindblur="getName" value="{{ base.name }}" placeholder="请输入姓名" placeholder-class="color"></input>
+    </view>
+    <view class="listBorder">
+        <text> 性别<text style="color: red;"> * </text> </text>
+        <picker disabled="{{inputDis}}" bindchange="getSex" range="{{sex}}" value="{{base.sex}}">
+            <view>{{sex[base.sex]}}<text></text></view>
+        </picker>
+    </view>
+    <view class="listBorder">
+        <text> 身份证号 <text style="color: red;"> * </text> </text>
+        <input disabled value="{{ base.idnum }}"></input>
+    </view>
+    <view class="listBorder">
+        <text> 出生日期<text style="color: red;"> * </text> </text>
+        <picker disabled="{{inputDis}}" mode="date" bindchange="getBirthday" end="{{nowTime}}" value="{{base.birthday}}">
+            <view>{{base.birthday}}<text></text></view>
+        </picker>
+    </view>
+    <view class="listBorder">
+        <text> 工作单位<text style="color: red;"> * </text> </text>
+        <input disabled="{{inputDis}}" bindinput="getWorkingUnit" value="{{ base.unit }}" placeholder="请输入工作单位" placeholder-class="color"></input>
+    </view>
+    <view class="listBorder">
+        <text> 联系电话<text style="color: red;"> * </text> </text>
+        <input disabled="{{inputDis}}" bindinput="getPhone" value="{{ base.phone }}" placeholder="请输入联系电话" placeholder-class="color"></input>
+    </view>
+    <view class="listBorder">
+        <text> 年龄<text style="color: red;"> * </text> </text>
+        <input disabled="{{inputDis}}" bindinput="getAge" value="{{ base.age }}" placeholder="请输入年龄" placeholder-class="color"></input>
+    </view>
+    <view class="listBorder">
+        <text>户籍所在地 <text style="color: red;"> * </text> </text>
+        <input disabled="{{inputDis}}" bindinput="getRegisteredplace" value="{{ base.registeredplace }}" placeholder="请输入户籍所在地" placeholder-class="color"></input>
+    </view>
+    <view class="listBorder">
+        <text> 婚姻状况 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getMarry" range="{{marry}}" value="{{base.marry}}">
+            <view>{{marry[base.marry]}}<text></text></view>
+        </picker>
+    </view>
+    <view class="listBorder">
+        <text> 居住情况 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getStay" range="{{stay}}" value="{{base.stay}}">
+            <view>{{stay[base.stay]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 代理人姓名 </text>
+        <input disabled="{{inputDis}}" bindinput="getAgentname" value="{{ base.agentname }}" placeholder="请输入代理人姓名" placeholder-class="color"></input>
+    </view>
+    <view class="listBorder">
+        <text>与申请人关系</text>
+        <input disabled="{{inputDis}}" bindinput="getRelation" value="{{ base.relation }}" placeholder="请输入与申请人关系" placeholder-class="color"></input>
+    </view>
+    <view class="listBorder">
+        <text>代理人地址</text>
+        <input disabled="{{inputDis}}" bindinput="getAgentadress" value="{{ base.agentadress }}" placeholder="请输入代理人地址" placeholder-class="color"></input>
+    </view>
+    <view class="listBorder">
+        <text>代理人电话</text>
+        <input disabled="{{inputDis}}" bindinput="getAgentphone" value="{{ base.agentphone }}" placeholder="请输入代理电话" placeholder-class="color"></input>
+    </view>
+    
+
+    <!-- <view class="listBorder">
+        <text> 联系人电话<text style="color: red;"> * </text></text>
+        <input disabled="{{inputDis}}" type="number" bindinput="getLinkPhone" value="{{ base.linkPhone }}" placeholder="请输入联系人电话" placeholder-class="color"></input>
+    </view> -->
+    <!-- <view class="listBorder">
+        <text> 民族 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getNation" range="{{nation}}" value="{{base.nation}}">
+            <view>{{nation[base.nation]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 血型 </text>
+        <picker disabled="{{inputDis}}" bindchange="getBlood" range="{{bloodtype}}" value="{{base.blood}}">
+            <view>{{bloodtype[base.blood]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 文化程度 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getEdu" range="{{education}}" value="{{base.edu}}">
+            <view>{{education[base.edu]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 职业 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getOcc" range="{{occupation}}" value="{{base.occ}}">
+            <view>{{occupation[base.occ]}}<text></text></view>
+        </picker>
+    </view> -->
+
+   
+
+    
+
+   
+</scroll-view>
+<!-- <view class="btn" bindtap="edit" wx:if="{{inputDis == true}}">{{isUploaded ? '已上传公卫无法编辑' : '编辑'}}</view> -->
+<view class="btn" bindtap="edit" wx:if="{{inputDis == true}}">{{'编辑'}}</view>
+<view class="btn" bindtap="save" wx:if="{{inputDis == false}}">保存</view>
+
+<modal wx:if="{{groupShow}}" title="特殊照顾居民分组" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    <checkbox-group bindchange="getGroup">
+        <label class="checkbox" wx:for="{{groupList}}" wx:key>
+            <checkbox color="#509d9f" value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+    </checkbox-group>
+</modal>
+

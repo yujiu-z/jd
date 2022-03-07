@@ -1,0 +1,225 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/melist/melist",
+          "pathName": "pages/melist/melist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/news/news",
+          "pathName": "pages/news/news",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/oldNus/oldNus",
+          "pathName": "pages/oldNus/oldNus",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/createPatient/createPatient",
+          "pathName": "pages/createPatient/createPatient",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/melist/melist",
+          "pathName": "pages/melist/melist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/servicetips/servicetips",
+          "pathName": "pages/servicetips/servicetips",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/plan/plan",
+          "pathName": "pages/plan/plan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/melist/melist",
+          "pathName": "pages/melist/melist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/changePassword/changePassword",
+          "pathName": "pages/changePassword/changePassword",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/forgetPassword/forgetPassword",
+          "pathName": "pages/forgetPassword/forgetPassword",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/register/register",
+          "pathName": "pages/register/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personalInformation/personalInformation",
+          "pathName": "pages/personalInformation/personalInformation",
+          "query": "id=620821199708251019&newr=1&name=&sex=1",
+          "scene": null
+        },
+        {
+          "name": "pages/oldNus/oldNus",
+          "pathName": "pages/oldNus/oldNus",
+          "query": "Idnumber=620821199708251025&name=%E7%8E%8B%E6%9F%90&phone=1000001&residentsid=8847053020859945580",
+          "scene": null
+        },
+        {
+          "name": "pages/signature/signature",
+          "pathName": "pages/signature/signature",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/oldNuslist/oldNuslist",
+          "pathName": "pages/oldNuslist/oldNuslist",
+          "query": "idnumber=620821199708251025&residentsid=8847053020859945580&phone=1000001&name=%E7%8E%8B%E6%9F%90",
+          "scene": null
+        },
+        {
+          "name": "pages/oldNuslist/oldNuslist",
+          "pathName": "pages/oldNuslist/oldNuslist",
+          "query": "idnumber=620821199708251026&residentsid=2237007339720169386&phone=17326418823&name=%E5%BC%A0%E4%B8%89",
+          "scene": null
+        },
+        {
+          "name": "pages/servicePack/servicePack",
+          "pathName": "pages/servicePack/servicePack",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/servicetips/servicetips",
+          "pathName": "pages/servicetips/servicetips",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/servicePlan/servicePlan",
+          "pathName": "pages/servicePlan/servicePlan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/residentsArchives/residentsArchives",
+          "pathName": "pages/residentsArchives/residentsArchives",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/projectList/projectList",
+          "pathName": "pages/projectList/projectList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/logs/logs",
+          "pathName": "pages/logs/logs",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/servicetips/servicetips",
+          "pathName": "pages/servicetips/servicetips",
+          "query": "",
+          "scene": 1001,
+          "partialCompile": {
+            "enabled": true,
+            "pages": []
+          }
+        },
+        {
+          "name": "pages/servicetips/servicetips",
+          "pathName": "pages/servicetips/servicetips",
+          "query": "",
+          "scene": 1001
+        },
+        {
+          "name": "pages/cooperation/cooperation",
+          "pathName": "pages/cooperation/cooperation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personalService/personalService",
+          "pathName": "pages/personalService/personalService",
+          "query": "idnumber=620821199708251026&residentsid=2237007339720169386&phone=17326418823&name=%E5%BC%A0%E4%B8%89",
+          "scene": null
+        },
+        {
+          "name": "pages/personalService/personalService",
+          "pathName": "pages/personalService/personalService",
+          "query": "idnumber=620821199708251026&residentsid=2237007339720169386&phone=17326418823&name=%E5%BC%A0%E4%B8%89",
+          "scene": null
+        },
+        {
+          "name": "pages/plan/plan",
+          "pathName": "pages/plan/plan",
+          "query": "Detailsid=13450811016413534090",
+          "scene": null
+        },
+        {
+          "name": "pages/servicetips/servicetips",
+          "pathName": "pages/servicetips/servicetips",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/melist/melist",
+          "pathName": "pages/melist/melist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/servicetips/servicetips",
+          "pathName": "pages/servicetips/servicetips",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/plan/plan",
+          "pathName": "pages/plan/plan",
+          "query": "Detailsid=17756253121592120287",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

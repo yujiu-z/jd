@@ -1,0 +1,116 @@
+/* pages/oldNus/oldNus.wxss */
+
+.container {
+  width: 100%!important;
+  height: auto!important;
+  box-sizing: border-box;
+  padding: 10rpx;
+  color: #444;
+}
+
+.rows .tele{
+  color: red;
+  position: absolute;
+  top: 30rpx;
+  width: 45rpx;
+  height: 45rpx;
+  font-size: 34rpx;
+  line-height: 38rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 2rpx solid red;
+  right: 160rpx;
+}
+
+.rows{
+  min-height: 80rpx;
+  height: auto;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #ccc;
+  position: relative;
+  background-color: #fefefe;
+  line-height: 80rpx;
+  border-radius: 15rpx;
+  width:90%;
+  
+}
+
+
+
+.rows text{
+  width: 60%;
+}
+
+.rows .must{
+  color: red;
+  position: absolute;
+  top: 15rpx;
+  left: 12rpx;
+}
+
+.rows .rightrow input{
+  border: 1rpx solid #ccc;
+  display: inline-block;
+  border-radius: 4rpx;
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 25rpx;
+  margin-top: 5rpx;
+  color: #888;
+  padding: 8rpx;
+  padding-left: 13rpx;
+}
+
+.rows .rightrow{
+  float: right;
+  width: 65%;
+  box-sizing: border-box;
+  padding: 0px 0px 0px 15rpx;
+}
+
+.rows .buttons{
+  position: absolute;
+  right: 0rpx;
+  top: 20rpx;
+}
+
+.rows .success{
+  color: #f0762b;
+  position: absolute;
+  top: 30rpx;
+  width: 45rpx;
+  height: 45rpx;
+  font-size: 34rpx;
+  line-height: 46rpx;
+  text-align: center;
+  border-radius: 50%;
+  border: 2rpx solid #509d9f;
+  right: 160rpx;
+}
+
+.rows .success .successicon{
+  width: 70%;
+  height: 90%;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+}
+
+.tapchange{
+  position: absolute;
+  top: 20rpx;
+  right: 10rpx;
+}
+
+.rows .rightrow .icon{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-width: 10rpx;
+  border-style: solid;
+  border-color: #999 transparent transparent transparent;
+  position: absolute;
+  right: 60rpx;
+  top: 45%;
+}

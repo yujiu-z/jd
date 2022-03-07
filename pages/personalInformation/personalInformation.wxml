@@ -1,0 +1,374 @@
+<!--pages/personalInformation/personalInformation.wxml-->
+<scroll-view scroll-y class="container">
+    <!-- <view class="listBorder">
+        <text>首页：</text>
+    </view> -->
+    <view class="listBorder">
+        <text> 姓名 <text style="color: red;"> * </text></text>
+        <input  bindinput="getName" bindblur="giveLinkName" value="{{ cover.name }}" placeholder="请输入姓名" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 封面编号 </text>
+        <input disabled="{{inputDis}}" bindinput="getCode" value="{{ cover.code }}" placeholder="请输入编号" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 现住址  <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getnowAddress" bindcolumnchange='getnowAddress' range='{{nowonlyArray}}'  mode='multiSelector' >
+            <view>
+              {{nowaddress}}<text></text>
+            </view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 户籍地址 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getAddress" bindcolumnchange='getAddress' range='{{onlyArray}}'  mode='multiSelector' >
+            <view>
+                {{Nativeplace}}<text></text>
+            </view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 联系电话 </text>
+        <input disabled="{{inputDis}}" type="number" bindinput="getPhone" bindblur="giveLinkPhone" value="{{ cover.phone }}" placeholder="请输入联系电话" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 乡村，街道，门牌号 </text>
+        <input disabled="{{inputDis}}" bindinput="getStreetName" value="{{ cover.streetName }}" placeholder="请输入乡村，街道，门牌号" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 村（居）委会名称 </text>
+        <input disabled="{{inputDis}}" bindinput="getVillage" value="{{ cover.village }}" placeholder="请输入村（居）委会名称" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 建档单位 </text>
+        <input disabled="{{inputDis}}" bindinput="getUnit" value="{{ cover.unit }}" placeholder="请输入建档单位" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 建档人 </text>
+        <input disabled="{{inputDis}}" bindinput="getPerson" value="{{ cover.person }}" placeholder="请输入建档人" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 建档状态</text>
+        <picker disabled="{{inputDis}}" bindchange="getStatuslist" range="{{Documentstatuslist}}" value="{{Documentstatus}}">
+            <view>{{Documentstatuslist[Documentstatus]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 责任医生 </text>
+        <input disabled="{{inputDis}}" bindinput="getDoctor" value="{{ cover.doctor }}" placeholder="请输入责任医生" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 建档日期 </text>
+        <input disabled value="{{ cover.createDate }}"></input>
+    </view>
+
+    <view class="listChoose" style="height: 60rpx;">
+        <text style="float: left;"> 是否上传公卫 </text>
+        <view style="float: right;">
+            否 <switch disabled="{{inputDis}}" checked="{{Upload}}" bindchange="changeUpload" color="#509d9f"></switch> 是
+        </view>
+    </view>
+
+    <view class="listBorder" style="margin-top: 20rpx">
+        <text>个人信息：</text>
+    </view>
+    <view class="listBorder">
+        <text> 个人信息表编号 </text>
+        <input disabled="{{inputDis}}" bindinput="getBaseCode" value="{{ base.code }}" placeholder="请输入编号" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 性别<text style="color: red;"> * </text> </text>
+        <picker disabled="{{inputDis}}" bindchange="getSex" range="{{sex}}" value="{{base.sex}}">
+            <view>{{sex[base.sex]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 出生日期<text style="color: red;"> * </text> </text>
+        <picker disabled="{{inputDis}}" mode="date" bindchange="getBirthday" end="{{nowTime}}" value="{{base.birthday}}">
+            <view>{{base.birthday}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 身份证号 <text style="color: red;"> * </text> </text>
+        <input disabled value="{{ base.idnum }}"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 工作单位<text style="color: red;"> * </text> </text>
+        <input disabled="{{inputDis}}" bindinput="getWorkingUnit" value="{{ base.unit }}" placeholder="请输入工作单位" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 联系人姓名 </text>
+        <input disabled="{{inputDis}}" bindinput="getLinkName" value="{{ base.linkName }}" placeholder="请输入联系人姓名" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 联系人电话<text style="color: red;"> * </text></text>
+        <input disabled="{{inputDis}}" type="number" bindinput="getLinkPhone" value="{{ base.linkPhone }}" placeholder="请输入联系人电话" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorder">
+        <text> 常住类型 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getStay" range="{{stay}}" value="{{base.stay}}">
+            <view>{{stay[base.stay]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 民族 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getNation" range="{{nation}}" value="{{base.nation}}">
+            <view>{{nation[base.nation]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 血型 </text>
+        <picker disabled="{{inputDis}}" bindchange="getBlood" range="{{bloodtype}}" value="{{base.blood}}">
+            <view>{{bloodtype[base.blood]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 文化程度 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getEdu" range="{{education}}" value="{{base.edu}}">
+            <view>{{education[base.edu]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 职业 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getOcc" range="{{occupation}}" value="{{base.occ}}">
+            <view>{{occupation[base.occ]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 婚姻状况 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getMarry" range="{{marry}}" value="{{base.marry}}">
+            <view>{{marry[base.marry]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 费用支付方式 <text style="color: red;"> * </text></text>
+        <picker disabled="{{inputDis}}" bindchange="getPay" range="{{pay}}" value="{{base.pay}}">
+            <view>{{pay[base.pay]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorders" style="height:auto">
+        <text> 药物过敏史 </text>
+        <checkbox-group bindchange="getIrritability">
+            <checkbox style="display:block;margin-top:10rpx" color="#509d9f"  disabled="{{inputDis}}" wx:for="{{irritability}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}">{{item.name}}</checkbox>
+        </checkbox-group>
+        <input type="text" placeholder="其他说明" disabled='{{!irritability[4].checked  || inputDis}}' value="{{ irritability[4].content }}" bindchange='getIrrcontent' />
+    </view>
+
+    <view class="listBorders">
+        <text> 暴露史 </text>
+        <checkbox-group bindchange="getExpose">
+            <checkbox style="display:block;margin-top:10rpx" color="#509d9f"  disabled="{{inputDis}}" wx:for="{{expose}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}">{{item.name}}</checkbox>
+        </checkbox-group>
+    </view>
+
+    <view class="listBorder">
+        <text> 遗传病史 </text>
+        <input disabled="{{inputDis}}" bindinput="getHeredity" value="{{ base.heredity }}" placeholder="请输入遗传病史" placeholder-class="color"></input>
+    </view>
+
+    <view class="listBorders" style="height:auto">
+        <text> 残疾情况 </text>
+        <checkbox-group bindchange="getDisability">
+            <checkbox style="display:block;margin-top:10rpx" color="#509d9f"  disabled="{{inputDis}}" wx:for="{{disability}}" wx:key="value" label="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}">{{item.name}}</checkbox>
+        </checkbox-group>
+        <input type="text" placeholder="其他说明" disabled='{{!disability[7].checked  || inputDis}}' value="{{ disability[7].content }}" bindchange="getDisabilitycontent"/>
+    </view>
+
+    <view class="listBorder" style='margin-top: 20rpx'>
+        <text>既往史：</text>
+    </view>
+    <view class="oneItem">
+        <block wx:for="{{base.illness}}" wx:key>
+            <view class="listBorder">
+                <text> 疾病 </text>
+                <picker disabled="{{inputDis}}" bindchange="getIllness" data-index="{{index}}" range="{{jwIllness}}" value="{{item.name}}">
+                    <view>{{jwIllness[item.name]}}<text></text></view>
+                </picker>
+            </view>
+
+            <view class="listBorder" wx:if="{{base.illness != '0'}}">
+                <text> 疾病日期 </text>
+                <picker disabled="{{inputDis}}" mode="date" bindchange="getIllnessDate" data-index="{{index}}" value="{{item.date}}">
+                    <view>{{item.date}}<text></text></view>
+                </picker>
+            </view>
+            <view class="tallyDown" bindtap="{{inputDis ? '' : 'subtractOneBaseIllness'}}" data-index="{{index}}" wx:if="{{base.illness.length > 1}}">-</view>
+        </block>
+        <view class="plus" bindtap="{{inputDis ? '' : 'addOneBaseIllness'}}">+</view>
+    </view>
+
+    <view class="oneItem">
+        <view class="listBorder">
+            <text> 手术 </text>
+            <input disabled="{{inputDis}}" bindinput="getOperation" value="{{ base.operation }}" placeholder="请输入手术名称" placeholder-class="color"></input>
+        </view>
+
+        <view class="listBorder" wx:if="{{base.operation != ''}}">
+            <text> 手术日期 </text>
+            <picker disabled="{{inputDis}}" mode="date" bindchange="getOperationDate" value="{{base.operationDate}}">
+                <view>{{base.operationDate}}<text></text></view>
+            </picker>
+        </view>
+    </view>
+
+    <view class="oneItem">
+        <view class="listBorder">
+            <text> 外伤 </text>
+            <input disabled="{{inputDis}}" bindinput="getInjury" value="{{ base.injury }}" placeholder="请输入外伤名称" placeholder-class="color"></input>
+        </view>
+
+        <view class="listBorder" wx:if="{{base.injury != ''}}">
+            <text> 受伤日期 </text>
+            <picker disabled="{{inputDis}}" mode="date" bindchange="getInjuryDate" value="{{base.injuryDate}}">
+                <view>{{base.injuryDate}}<text></text></view>
+            </picker>
+        </view>
+    </view>
+
+    <view class="oneItem">
+        <view class="listBorder">
+            <text> 输血 </text>
+            <input disabled="{{inputDis}}" bindinput="getBloodReason" value="{{ base.bloodReason }}" placeholder="请输入输血原因" placeholder-class="color"></input>
+        </view>
+
+        <view class="listBorder" wx:if="{{base.bloodReason != ''}}">
+            <text> 输血日期 </text>
+            <picker disabled="{{inputDis}}" mode="date" bindchange="getBloodDate" value="{{base.bloodDate}}">
+                <view>{{base.bloodDate}}<text></text></view>
+            </picker>
+        </view>
+    </view>
+
+    <view class="listBorder" style='margin-top: 20rpx'>
+        <text>家族史：</text>
+    </view>
+    <view class="listChoose">
+        <text style="float: left;"> 父亲 </text>
+        <view style="float: right;">
+            无 <switch disabled="{{inputDis}}" checked="{{fatherHave}}" bindchange="changeFatherHave" color="#509d9f"></switch> 有
+        </view>
+        <view style="clear: both;"></view>
+        <checkbox-group bindchange="getFatherIll" wx:if="{{fatherHave}}">
+            <label class="checkbox" wx:for="{{fatherIll}}" wx:key>
+                <checkbox disabled="{{inputDis}}" size="20" value="{{item.value}}" checked="{{item.checked}}" color="#509d9f" />{{illness[index]}}
+            </label>
+        </checkbox-group>
+        <input wx:if="{{fatherHave}}" placeholder='请输入其他疾病' placeholder-class='color' disabled="{{fatherIll[10].checked == false || inputDis}}" bindinput="getFatherOtherIll" value="{{fatherIll[10].ill}}"></input>
+    </view>
+
+    <view class="listChoose">
+        <text style="float: left;"> 母亲 </text>
+        <view style="float: right;">
+            无 <switch disabled="{{inputDis}}" checked="{{motherHave}}" bindchange="changeMotherHave" color="#509d9f"></switch> 有
+        </view>
+        <view style="clear: both;"></view>
+        <checkbox-group bindchange="getMotherIll" wx:if="{{motherHave}}">
+            <label class="checkbox" wx:for="{{motherIll}}" wx:key>
+                <checkbox disabled="{{inputDis}}" size="20" value="{{item.value}}" checked="{{item.checked}}" color="#509d9f" />{{illness[index]}}
+            </label>
+        </checkbox-group>
+        <input wx:if="{{motherHave}}" placeholder='请输入其他疾病' placeholder-class='color' disabled="{{motherIll[10].checked == false || inputDis}}" bindinput="getMotherOtherIll" value="{{motherIll[10].ill}}"></input>
+    </view>
+
+    <view class="listChoose">
+        <text style="float: left;"> 兄弟姐妹 </text>
+        <view style="float: right;">
+            无 <switch disabled="{{inputDis}}" checked="{{brotherHave}}" bindchange="changeBrotherHave" color="#509d9f"></switch> 有
+        </view>
+        <view style="clear: both;"></view>
+        <checkbox-group bindchange="getBrotherIll" wx:if="{{brotherHave}}">
+            <label class="checkbox" wx:for="{{brotherIll}}" wx:key>
+                <checkbox disabled="{{inputDis}}" size="20" value="{{item.value}}" checked="{{item.checked}}" color="#509d9f" />{{illness[index]}}
+            </label>
+        </checkbox-group>
+        <input wx:if="{{brotherHave}}" placeholder='请输入其他疾病' placeholder-class='color' disabled="{{brotherIll[10].checked == false || inputDis}}" bindinput="getBrotherOtherIll" value="{{brotherIll[10].ill}}"></input>
+    </view>
+
+    <view class="listChoose">
+        <text style="float: left;"> 子女 </text>
+        <view style="float: right;">
+            无 <switch disabled="{{inputDis}}" checked="{{childHave}}" bindchange="changeChildHave" color="#509d9f"></switch> 有
+        </view>
+        <view style="clear: both;"></view>
+        <checkbox-group bindchange="getChildIll" wx:if="{{childHave}}">
+            <label class="checkbox" wx:for="{{childIll}}" wx:key>
+                <checkbox disabled="{{inputDis}}" size="20" value="{{item.value}}" checked="{{item.checked}}" color="#509d9f" />{{illness[index]}}
+            </label>
+        </checkbox-group>
+        <input wx:if="{{childHave}}" placeholder='请输入其他疾病' placeholder-class='color' disabled="{{childIll[10].checked == false || inputDis}}" bindinput="getChildOtherIll" value="{{childIll[10].ill}}"></input>
+    </view>
+
+    <view class="listBorder" style='margin-top: 20rpx'>
+        <text>生活环境：</text>
+    </view>
+    <view class="listBorder">
+        <text> 厨房排风设施 </text>
+        <picker disabled="{{inputDis}}" bindchange="getKitchen" range="{{kitchen}}" value="{{base.kitchen}}">
+            <view>{{kitchen[base.kitchen]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 燃料类型 </text>
+        <picker disabled="{{inputDis}}" bindchange="getFuel" range="{{fuel}}" value="{{base.fuel}}">
+            <view>{{fuel[base.fuel]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 饮水 </text>
+        <picker disabled="{{inputDis}}" bindchange="getWater" range="{{water}}" value="{{base.water}}">
+            <view>{{water[base.water]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 厕所 </text>
+        <picker disabled="{{inputDis}}" bindchange="getToilet" range="{{toilet}}" value="{{base.toilet}}">
+            <view>{{toilet[base.toilet]}}<text></text></view>
+        </picker>
+    </view>
+
+    <view class="listBorder">
+        <text> 禽畜栏 </text>
+        <picker disabled="{{inputDis}}" bindchange="getLivestock" range="{{livestock}}" value="{{base.livestock}}">
+            <view>{{livestock[base.livestock]}}<text></text></view>
+        </picker>
+    </view>
+</scroll-view>
+<!-- <view class="btn" bindtap="edit" wx:if="{{inputDis == true}}">{{isUploaded ? '已上传公卫无法编辑' : '编辑'}}</view> -->
+<view class="btn" bindtap="edit" wx:if="{{inputDis == true}}">{{'编辑'}}</view>
+<view class="btn" bindtap="save" wx:if="{{inputDis == false}}">保存</view>
+
+<modal wx:if="{{groupShow}}" title="特殊照顾居民分组" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+    <checkbox-group bindchange="getGroup">
+        <label class="checkbox" wx:for="{{groupList}}" wx:key>
+            <checkbox color="#509d9f" value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+        </label>
+    </checkbox-group>
+</modal>
